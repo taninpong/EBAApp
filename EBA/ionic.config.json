@@ -1,0 +1,7 @@
+{
+  "name": "EBA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
