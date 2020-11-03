@@ -5,5 +5,131 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Name :</ion-label>
+        <ion-input placeholder="Name" [(ngModel)]="Tournament.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>bannerUrl :</ion-label>
+        <ion-input placeholder="bannerUrl" [(ngModel)]="Tournament.bannerUrl"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>description :</ion-label>
+        <ion-input placeholder="description" [(ngModel)]="Tournament.description"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>hostId :</ion-label>
+        <ion-input placeholder="hostId" [(ngModel)]="Tournament.hostId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>startDate :</ion-label>
+        <ion-input placeholder="startDate" type="date" [(ngModel)]="Tournament.startDate"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>gameId :</ion-label>
+        <ion-input placeholder="gameId" [(ngModel)]="Tournament.gameId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>prizePool :</ion-label>
+        <ion-input placeholder="prizePool" type="number" [(ngModel)]="Tournament.prizePool"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>prizeStrategy :</ion-label>
+        <ion-input placeholder="prizeStrategy" [(ngModel)]="Tournament.prizeStrategy"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>matchingAlgorithm :</ion-label>
+        <ion-input placeholder="matchingAlgorithm" [(ngModel)]="Tournament.matchingAlgorithm"></ion-input>
+      </ion-item>
+    
+      <ion-button (click)="createTournament()">POST​/Tournament</ion-button>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <ion-button (click)="getTournament()">GET​/Tournament</ion-button>
+    
+      <ion-list *ngFor="let item of ListTournament">
+        <ion-item>
+          <ion-label>Name : {{ item.name }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>bannerUrl : {{ item.bannerUrl }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>description : {{ item.description }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>hostId : {{ item.hostId }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>startDate : {{ item.startDate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>gameId : {{ item.gameId }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>prizePool : {{ item.prizePool }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>prizeStrategy : {{ item.prizeStrategy }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>matchingAlgorithm : {{ item.matchingAlgorithm }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>TournamentID :</ion-label>
+        <ion-input placeholder="ID" [(ngModel)]="ID"></ion-input>
+      </ion-item>
+      <ion-button (click)="getTournamentByID()">GET​/TournamentByID</ion-button>
+      <ion-list>
+        <ion-item>
+          <ion-label>Name : {{ TournamentID.name }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>bannerUrl : {{ TournamentID.bannerUrl }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>description : {{ TournamentID.description }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>hostId : {{ TournamentID.hostId }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>startDate : {{ TournamentID.startDate }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>gameId : {{ TournamentID.gameId }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>prizePool : {{ TournamentID.prizePool }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>prizeStrategy : {{ TournamentID.prizeStrategy }}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>matchingAlgorithm : {{ TournamentID.matchingAlgorithm }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>TournamentID :</ion-label>
+        <ion-input placeholder="ID" [(ngModel)]="ID"></ion-input>
+      </ion-item>
+      <ion-button (click)="deleteTournamentByID()">DEL/TournamentByID</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
