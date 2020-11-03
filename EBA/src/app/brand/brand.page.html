@@ -5,5 +5,36 @@
 </ion-header>
 
 <ion-content>
+  <ion-button (click)="getAPIAllData()" expand="full">GetAPI</ion-button>
 
+
+  <ion-item>
+    <ion-label>Name :</ion-label>
+    <ion-input placeholder="Name" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>bannerUrl :</ion-label>
+    <ion-input placeholder="bannerUrl" [(ngModel)]="bannerUrl"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>playerId :</ion-label>
+    <ion-input placeholder="playerId" [(ngModel)]="playerId"></ion-input>
+  </ion-item>
+  <ion-button (click)="postapi(name,bannerUrl,playerId)" expand="full">PostAPI</ion-button>
+  <hr>
+  <ion-item>
+    <ion-label>Id Serch :</ion-label>
+    <ion-input placeholder="" [(ngModel)]="id"></ion-input>
+  </ion-item>
+  <ion-button (click)="getAPIById(id)" expand="full">getAPIById</ion-button>
+
+  <ion-item>
+    <ion-label>Delete Id :</ion-label>
+    <ion-input placeholder="" [(ngModel)]="id2"></ion-input>
+  </ion-item>
+  <ion-button (click)="DeleteData(id2)" expand="full">getAPIById</ion-button>
+
+
+
+  
 </ion-content>
