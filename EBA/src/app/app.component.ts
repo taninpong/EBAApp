@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
       icon: 'mail'
     },
     {
-      title: 'Outbox',
-      url: '/folder/Outbox',
+      title: 'Game',
+      url: 'game',
       icon: 'paper-plane'
     },
     {
@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     {
       title: 'Team',
       url: 'team',
-      icon: 'warning'
+      icon: 'people'
     },
     {
       title: 'Tournament',
