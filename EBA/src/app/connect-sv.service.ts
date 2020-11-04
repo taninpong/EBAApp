@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Tournament } from 'src/models/Tournament';
 import { Player, PlayerReq } from 'src/models/Player';
 import { HostReq } from 'src/models/Host';
+import { Guild, GuildReq } from 'src/models/Guild';
 
 
 @Injectable({
@@ -15,6 +16,22 @@ export class ConnectSVService {
     this.url = "http://localhost:32768/"
   }
 
+  //Guild
+  createGuild(item: GuildReq) {
+    return this.http.post<GuildReq>(this.url + "Guild", item);
+  }
+
+  getGuild() {
+    return this.http.get<Guild[]>(this.url + "Guild");
+  }
+
+  getGuildByID(id: string) {
+    return this.http.get<Guild>(this.url + "Guild/" + id);
+  }
+
+  deleteGuildByID(id: string) {
+    return this.http.delete<Guild>(this.url + "Guild/" + id);
+  }
 
   //Host
   createHost(item: HostReq) {
