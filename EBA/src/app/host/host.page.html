@@ -5,5 +5,57 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Name :</ion-label>
+        <ion-input placeholder="Name" [(ngModel)]="hostReq.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>bannerUrl :</ion-label>
+        <ion-input placeholder="bannerUrl" [(ngModel)]="hostReq.bannerUrl"></ion-input>
+      </ion-item>
+      <ion-button (click)="createHost()">Post/Host</ion-button>
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <ion-button (click)="getHost()">GET​/Host</ion-button>
+      <ion-list *ngFor="let item of listHost">
+        <img src="{{ item.bannerUrl }}">
+        <ion-item>createdDate: {{ item.createdDate }}</ion-item>
+        <ion-item>name: {{ item.name }}</ion-item>
+        <ion-item>suspendedDate: {{ item.suspendedDate }}</ion-item>
+        <ion-item>_id: {{ item._id }}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Host ID :</ion-label>
+        <ion-input placeholder="Host ID" [(ngModel)]="ID"></ion-input>
+      </ion-item>
+      <ion-button (click)="getHostByID()">GET/Host</ion-button>
+      <ion-list *ngIf="host">
+        <img src="{{ host.bannerUrl }}">
+        <ion-item>_id: {{ host._id }}</ion-item>
+        <ion-item>name: {{ host.name }}</ion-item>
+        <ion-item>createdDate: {{ host.createdDate }}</ion-item>
+        <ion-item>suspendedDate: {{ host.suspendedDate }}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Host ID :</ion-label>
+        <ion-input placeholder="Host ID" [(ngModel)]="DelID"></ion-input>
+      </ion-item>
+      <ion-button (click)="deleteHostByID()">DEL/Host</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

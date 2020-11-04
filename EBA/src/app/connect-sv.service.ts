@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Host, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Tournament } from 'src/models/Tournament';
 import { CreateTeamModel } from "../models/TeamModel/CreateTeamModel";
@@ -22,6 +22,59 @@ export class ConnectSVService {
     this.url = "http://localhost:32768/"
   }
 
+  //Guild
+  createGuild(item: GuildReq) {
+    return this.http.post<GuildReq>(this.url + "Guild", item);
+  }
+
+  getGuild() {
+    return this.http.get<Guild[]>(this.url + "Guild");
+  }
+
+  getGuildByID(id: string) {
+    return this.http.get<Guild>(this.url + "Guild/" + id);
+  }
+
+  deleteGuildByID(id: string) {
+    return this.http.delete<Guild>(this.url + "Guild/" + id);
+  }
+
+  //Host
+  createHost(item: HostReq) {
+    return this.http.post<HostReq>(this.url + "Host", item);
+  }
+
+  getHost() {
+    return this.http.get<Host[]>(this.url + "Host");
+  }
+
+  getHostByID(id: string) {
+    return this.http.get<Host>(this.url + "Host/" + id);
+  }
+
+  deleteHostByID(id: string) {
+    return this.http.delete<Host>(this.url + "Host/" + id);
+  }
+
+
+  //player
+  createPlayer(item: PlayerReq) {
+    return this.http.post<PlayerReq>(this.url + "Player", item);
+  }
+
+  getPlayer() {
+    return this.http.get<Player[]>(this.url + "Player");
+  }
+
+  getPlayerByID(id: string) {
+    return this.http.get<Player>(this.url + "Player/" + id);
+  }
+
+  deletePlayerByID(id: string) {
+    return this.http.delete<Player>(this.url + "Player/" + id);
+  }
+
+  //Tournament
   createTournament(item: Tournament) {
     return this.http.post<Tournament>(this.url + "Tournament", item);
   }

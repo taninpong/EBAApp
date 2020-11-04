@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { error } from 'protractor';
 import { Tournament } from 'src/models/Tournament';
 import { ConnectSVService } from '../connect-sv.service';
 
@@ -10,24 +12,42 @@ import { ConnectSVService } from '../connect-sv.service';
 export class TournamentPage implements OnInit {
 
   public Tournament: Tournament = new Tournament;
-  public TournamentID: Tournament = new Tournament;
+  public TournamentID: Tournament
   public ListTournament: Tournament[];
   public ID: string;
-  constructor(private service: ConnectSVService) { }
+  public errorMsg: string;
+  constructor(private service: ConnectSVService, private altctrl: AlertController) { }
 
   ngOnInit() {
   }
 
-  createTournament() {
-    this.service.createTournament(this.Tournament).subscribe(data => {
-      console.log(data);
+  async showAlert(msg: string) {
+    let alert = await this.altctrl.create({
+      message: msg
     });
+    await alert.present();
+  }
+
+  createTournament() {
+    this.service.createTournament(this.Tournament).subscribe(
+      data => {
+        console.log(data)
+      },
+      error => {
+        console.log(error)
+        this.showAlert(JSON.stringify(error));
+      }
+    );
   }
 
   getTournament() {
     this.service.getTournament().subscribe(data => {
       this.ListTournament = data;
       console.log(this.ListTournament);
+    },
+    error => {
+      console.log(error)
+      this.showAlert(JSON.stringify(error));
     });
   }
 
@@ -35,12 +55,20 @@ export class TournamentPage implements OnInit {
     this.service.getTournamentByID(this.ID).subscribe(data => {
       this.TournamentID = data;
       console.log(this.TournamentID);
+    },
+    error => {
+      console.log(error)
+      this.showAlert(JSON.stringify(error));
     });
   }
 
-  deleteTournamentByID(){
-    this.service.deleteTournamentByID(this.ID).subscribe(data =>{
+  deleteTournamentByID() {
+    this.service.deleteTournamentByID(this.ID).subscribe(data => {
       console.log(data);
+    },
+    error => {
+      console.log(error)
+      this.showAlert(JSON.stringify(error));
     });
   }
 

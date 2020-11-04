@@ -23,18 +23,18 @@ export class AppComponent implements OnInit {
       icon: 'paper-plane'
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
+      title: 'Guild',
+      url: 'guild',
       icon: 'heart'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
+      title: 'Host',
+      url: 'host',
       icon: 'archive'
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
+      title: 'Player',
+      url: 'player',
       icon: 'trash'
     },
     {
