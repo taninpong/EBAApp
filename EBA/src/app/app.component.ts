@@ -28,8 +28,8 @@ export class AppComponent implements OnInit {
       icon: 'heart'
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
+      title: 'Host',
+      url: 'host',
       icon: 'archive'
     },
     {

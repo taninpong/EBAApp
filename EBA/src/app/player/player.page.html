@@ -23,7 +23,7 @@
     <ion-card-content>
       <ion-button (click)="getPlayer()">GET​/Player</ion-button>
       <ion-list *ngFor="let item of listPlayer">
-        <img src="https://avataaars.io">
+        <img src="{{ item.avatarUrl }}">
         <ion-item>brandId: {{ item.brandId }}</ion-item>
         <ion-item>createdDate: {{ item.createdDate }}</ion-item>
         <ion-item>memberOfGuildId: {{ item.memberOfGuildId }}</ion-item>
