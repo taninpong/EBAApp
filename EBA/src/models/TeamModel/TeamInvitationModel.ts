@@ -1,7 +1,14 @@
 export class TeamInvitationModel {
-    teamId: string;
-    fromPlayerId: string;
-    toPlayerId: string;
-    role: string;
-    message: string;
+    _id : string; 
+    TeamId : string;                           
+    CreatedByPlayerId : string;    
+    RequestPlayerIdToJoin : string;  
+    Role : string;  
+    Message : string;  
+    CreatedDate : Date;
+    AcceptedDate : Date;
+    RejectedDate : Date;
+    SuspendedDate : Date;
+    JoiningType : string;  
+    CompletedByPlayerId : string;  
 }

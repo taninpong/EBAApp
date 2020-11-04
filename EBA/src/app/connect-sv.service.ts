@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Tournament } from 'src/models/Tournament';
-import { GetTeamModel } from "../models/TeamModel/GetTeamModel";
-import { TeamInvitationModel } from "../models/TeamModel/TeamInvitationModel";
+import { CreateTeamModel } from "../models/TeamModel/CreateTeamModel";
+import { CreateTeamInvitationModel } from "../models/TeamModel/CreateTeamInvitationModel";
 import { TeamRequestModel } from "../models/TeamModel/TeamRequestModel";
 import { TeamRewardPlanModel } from "../models/TeamModel/TeamRewardPlanModel";
 import { TeamModel } from "../models/TeamModel/TeamModel";
 import { updateTeamJoiningModel } from "../models/TeamModel/updateTeamJoiningModel";
-import { TeamJoiningRequestModel } from 'src/models/TeamModel/TeamJoiningRequestModel';
+import { TeamInvitationModel } from '../models/TeamModel/TeamInvitationModel';
 import { BrandCreate, BrandInfo } from 'src/models/BrandModel';
 import { GameCreate, GameInfo, GameSupportReward } from 'src/models/GameModel';
 
@@ -39,31 +39,31 @@ export class ConnectSVService {
   }
 
   //Team
-  createTeam(item: GetTeamModel) {
-    return this.http.post<GetTeamModel>(`${this.url}Team`, item);
+  createTeam(item : CreateTeamModel){
+    return this.http.post<CreateTeamModel>(`${this.url}Team`,item);
   }
-  getTeam() {
+  getTeam(){
     return this.http.get<TeamModel[]>(`${this.url}Team`);
   }
-  rewardPlantTeam(item: TeamRewardPlanModel) {
-    return this.http.post<TeamRewardPlanModel>(`${this.url}Team/RewardPlan`, item);
+  rewardPlantTeam(item : TeamRewardPlanModel){
+    return this.http.post<TeamRewardPlanModel>(`${this.url}Team/RewardPlan`,item);
   }
-  createInvitationTeam(item: TeamInvitationModel) {
-    return this.http.post<TeamInvitationModel>(`${this.url}Team/Invitation`, item);
+  createInvitationTeam(item : CreateTeamInvitationModel){
+    return this.http.post<CreateTeamInvitationModel>(`${this.url}Team/Invitation`,item);
   }
-  createRequestTeam(item: TeamRequestModel) {
-    return this.http.post<TeamRequestModel>(`${this.url}Team/RequestToPlay`, item);
+  createRequestTeam(item : TeamRequestModel){
+    return this.http.post<TeamRequestModel>(`${this.url}Team/RequestToPlay`,item);
   }
-  updateTeamJoining(id: string, item: updateTeamJoiningModel) {
-    return this.http.put(`${this.url}Team/TeamJoining${id}`, item);
+  updateTeamJoining(id: string,item : updateTeamJoiningModel){
+    return this.http.put(`${this.url}Team/TeamJoining/${id}`,item);
   }
-  getInvitationById(id: string) {
-    return this.http.get<TeamJoiningRequestModel>(`${this.url}Team/Invitation${id}`);
+  getInvitationById(id : string){
+    return this.http.get<TeamInvitationModel>(`${this.url}Team/Invitation${id}`);
   }
-  getTeamById(id: string) {
+  getTeamById(id : string){
     return this.http.get<TeamModel>(`${this.url}Team/${id}`);
   }
-  deleteTeam(id: string) {
+  deleteTeam(id : string){
     return this.http.delete<TeamModel>(`${this.url}Team/${id}`);
   }
 
