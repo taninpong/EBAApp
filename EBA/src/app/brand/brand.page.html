@@ -7,7 +7,7 @@
 <ion-content>
 
   <ion-item>
-    <ion-label>Brand.Get</ion-label>
+    <ion-label>GetBrands</ion-label>
   </ion-item>
   <ion-button (click)="getAPIAllData()" expand="full">GetAPI</ion-button>
   <ion-item>
@@ -27,7 +27,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label>Brand.Post</ion-label>
+    <ion-label>CreateBrand</ion-label>
   </ion-item>
   <ion-item>
     <ion-label>Name :</ion-label>
@@ -44,7 +44,7 @@
   <ion-button (click)="postapi(name,bannerUrl,playerId)" expand="full">PostAPI</ion-button>
 
   <ion-item>
-    <ion-label>Brand.Get(Id)</ion-label>
+    <ion-label>GetBrandById</ion-label>
   </ion-item>
   <ion-item>
     <ion-label>Id Serch :</ion-label>
@@ -55,7 +55,7 @@
     <ion-label>Data.GetByID</ion-label>
     <ion-grid>
       <ion-row>
-        <ion-col *ngIf="brandData != null">
+        <ion-col>
           <ion-label>ID : {{brandData._id}}</ion-label>
           <ion-label>Name : {{brandData.name}} </ion-label>
           <ion-label>bannerUrl : {{brandData.bannerUrl}} </ion-label>
@@ -68,7 +68,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-label>Brand.Delete</ion-label>
+    <ion-label>DeleteBrand</ion-label>
   </ion-item>
   <ion-item>
     <ion-label>Delete Id :</ion-label>

@@ -9,6 +9,7 @@ import { TeamModel } from "../models/TeamModel/TeamModel";
 import { updateTeamJoiningModel } from "../models/TeamModel/updateTeamJoiningModel";
 import { TeamJoiningRequestModel } from 'src/models/TeamModel/TeamJoiningRequestModel';
 import { BrandCreate, BrandInfo } from 'src/models/BrandModel';
+import { GameCreate, GameInfo, GameSupportReward } from 'src/models/GameModel';
 
 
 @Injectable({
@@ -84,6 +85,23 @@ export class ConnectSVService {
   }
 
   //Game
+  getGames() {
+    return this.http.get<GameInfo[]>(`${this.url}Game`);
+  }
 
-  
+  getGameById(id: string) {
+    return this.http.get<GameInfo>(`${this.url}Game${id}`);
+  }
+  deleteGame(id: string) {
+    return this.http.delete<GameInfo>(`${this.url}Game/${id}`);
+  }
+
+  createGame(item: GameCreate) {
+    return this.http.post<GameCreate>(`${this.url}Game`, item);
+  }
+
+  supportRewardPlan(item: GameSupportReward) {
+    return this.http.post<GameSupportReward>(`${this.url}Game`, item);
+  }
+
 }

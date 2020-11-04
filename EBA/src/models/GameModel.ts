@@ -5,16 +5,16 @@ export class GameCreate {
     description: string;
 }
 
-export class GameIndo {
+export class GameInfo {
     _id: string;
-    Name: string;
-    BannerUrl: string;
-    Description: string;
-    CreatedDate: string;
-    SuspendedDate: string;
+    name: string;
+    bannerUrl: string;
+    description: string;
+    createdDate: string;
+    suspendedDate: string;
 }
 
-export class CreateGameSupportRewardPlanRequest {
-    GameId: string;
-    RewardPlanId: string;
+export class GameSupportReward {
+    gameId: string;
+    rewardPlanId: string;
 }

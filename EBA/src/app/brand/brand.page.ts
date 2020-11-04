@@ -10,10 +10,9 @@ import { ConnectSVService } from '../connect-sv.service';
   styleUrls: ['./brand.page.scss'],
 })
 export class BrandPage implements OnInit {
-  brandinfo: BrandCreate = { name: "", bannerUrl: "", playerId: "" };
+  brandinfo: BrandCreate = new BrandCreate;
   brandDataList: BrandInfo[] = [];
-  brandData: BrandInfo = null;
-  // { _id: "", bannerUrl: "", name: "", createdByPlayerId: "", createdDate: "", suspendedDate: "" };
+  brandData: BrandInfo = new BrandInfo;
 
   constructor(private http: HttpClient, public alertController: AlertController, private service: ConnectSVService) { }
 

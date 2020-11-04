@@ -5,8 +5,8 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-item>
-    <ion-label>Game.Post</ion-label>
+  <ion-item>
+    <ion-label>CreateGame</ion-label>
   </ion-item>
   <ion-item>
     <ion-label>Name :</ion-label>
@@ -20,21 +20,38 @@
     <ion-label>description :</ion-label>
     <ion-input placeholder="description" [(ngModel)]="description"></ion-input>
   </ion-item>
-  <ion-button (click)="getAPIAllData(name,bannerUrl,description)" expand="full">GetAPI</ion-button>
+  <ion-button (click)="createGame(name,bannerUrl,description)" expand="full">GetAPI</ion-button>
   <ion-item>
-    <ion-label>Game.Get</ion-label>
+    <ion-label>GetGames</ion-label>
   </ion-item>
-  <ion-button (click)="getAPIAllData()" expand="full">GetAPI</ion-button>
+  <ion-button (click)="getGames()" expand="full">GetGames</ion-button>
+  <!-- //binding Games -->
   <ion-item>
-    <ion-label>Game.PostSupport</ion-label>
+    <ion-label>Game.SupportRewardPlan</ion-label>
   </ion-item>
-  <ion-button (click)="getAPIAllData()" expand="full">GetAPI</ion-button>
   <ion-item>
-    <ion-label>Game.Get(Id)</ion-label>
+    <ion-label>Name :</ion-label>
+    <ion-input placeholder="GameId" [(ngModel)]="gameId"></ion-input>
   </ion-item>
-  <ion-button (click)="getAPIAllData()" expand="full">GetAPI</ion-button>
   <ion-item>
-    <ion-label>Game.Delete(Id)</ion-label>
+    <ion-label>Name :</ion-label>
+    <ion-input placeholder="RewardPlanId" [(ngModel)]="rewardPlanId"></ion-input>
   </ion-item>
-  <ion-button (click)="getAPIAllData()" expand="full">GetAPI</ion-button> -->
+  <ion-button (click)="supportRewardPlan(gameId,rewardPlanId)" expand="full">GetAPI</ion-button>
+  <ion-item>
+    <ion-label>GetGameById</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Name :</ion-label>
+    <ion-input placeholder="GameId" [(ngModel)]="id"></ion-input>
+  </ion-item>
+  <ion-button (click)="getGameById(id)" expand="full">GetAPI</ion-button>
+  <ion-item>
+    <ion-label>DeleteGGame</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Name :</ion-label>
+    <ion-input placeholder="GameId" [(ngModel)]="id"></ion-input>
+  </ion-item>
+  <ion-button (click)="deleteGame(id)" expand="full">GetAPI</ion-button>
 </ion-content>
