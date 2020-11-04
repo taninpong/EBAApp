@@ -8,6 +8,7 @@ import { TeamRewardPlanModel } from "../models/TeamModel/TeamRewardPlanModel";
 import { TeamModel } from "../models/TeamModel/TeamModel";
 import { updateTeamJoiningModel } from "../models/TeamModel/updateTeamJoiningModel";
 import { TeamJoiningRequestModel } from 'src/models/TeamModel/TeamJoiningRequestModel';
+import { BrandCreate, BrandInfo } from 'src/models/BrandModel';
 
 
 @Injectable({
@@ -28,40 +29,61 @@ export class ConnectSVService {
     return this.http.get<Tournament[]>(this.url + "Tournament");
   }
 
-  getTournamentByID(id: string){
+  getTournamentByID(id: string) {
     return this.http.get<Tournament>(this.url + "Tournament/" + id);
   }
 
-  deleteTournamentByID(id: string){
+  deleteTournamentByID(id: string) {
     return this.http.delete<Tournament>(this.url + "Tournament/" + id);
   }
 
   //Team
-  createTeam(item : GetTeamModel){
-    return this.http.post<GetTeamModel>(`${this.url}Team`,item);
+  createTeam(item: GetTeamModel) {
+    return this.http.post<GetTeamModel>(`${this.url}Team`, item);
   }
-  getTeam(){
+  getTeam() {
     return this.http.get<TeamModel[]>(`${this.url}Team`);
   }
-  rewardPlantTeam(item : TeamRewardPlanModel){
-    return this.http.post<TeamRewardPlanModel>(`${this.url}Team/RewardPlan`,item);
+  rewardPlantTeam(item: TeamRewardPlanModel) {
+    return this.http.post<TeamRewardPlanModel>(`${this.url}Team/RewardPlan`, item);
   }
-  createInvitationTeam(item : TeamInvitationModel){
-    return this.http.post<TeamInvitationModel>(`${this.url}Team/Invitation`,item);
+  createInvitationTeam(item: TeamInvitationModel) {
+    return this.http.post<TeamInvitationModel>(`${this.url}Team/Invitation`, item);
   }
-  createRequestTeam(item : TeamRequestModel){
-    return this.http.post<TeamRequestModel>(`${this.url}Team/RequestToPlay`,item);
+  createRequestTeam(item: TeamRequestModel) {
+    return this.http.post<TeamRequestModel>(`${this.url}Team/RequestToPlay`, item);
   }
-  updateTeamJoining(id: string,item : updateTeamJoiningModel){
-    return this.http.put(`${this.url}Team/TeamJoining${id}`,item);
+  updateTeamJoining(id: string, item: updateTeamJoiningModel) {
+    return this.http.put(`${this.url}Team/TeamJoining${id}`, item);
   }
-  getInvitationById(id : string){
+  getInvitationById(id: string) {
     return this.http.get<TeamJoiningRequestModel>(`${this.url}Team/Invitation${id}`);
   }
-  getTeamById(id : string){
+  getTeamById(id: string) {
     return this.http.get<TeamModel>(`${this.url}Team/${id}`);
   }
-  deleteTeam(id : string){
+  deleteTeam(id: string) {
     return this.http.delete<TeamModel>(`${this.url}Team/${id}`);
   }
+
+  //Brand
+  getBrandAll() {
+    return this.http.get<BrandInfo[]>(`${this.url}Brand`);
+  }
+
+  createBrand(item: BrandCreate) {
+    return this.http.post<BrandCreate>(`${this.url}Brand`, item);
+  }
+
+  getBrandById(id: string) {
+    return this.http.get<BrandInfo>(`${this.url}Brand/${id}`);
+  }
+
+  deleteBrand(id: string) {
+    return this.http.delete<BrandInfo>(`${this.url}Brand/${id}`);
+  }
+
+  //Game
+
+  
 }

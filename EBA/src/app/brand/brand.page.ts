@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { BrandCreate, BrandInfo } from 'src/models/BrandModel';
+import { ConnectSVService } from '../connect-sv.service';
 
 @Component({
   selector: 'app-brand',
@@ -14,13 +15,13 @@ export class BrandPage implements OnInit {
   brandData: BrandInfo = null;
   // { _id: "", bannerUrl: "", name: "", createdByPlayerId: "", createdDate: "", suspendedDate: "" };
 
-  constructor(private http: HttpClient, public alertController: AlertController) { }
+  constructor(private http: HttpClient, public alertController: AlertController, private service: ConnectSVService) { }
 
   ngOnInit() {
   }
 
   getAPIAllData() {
-    var data = this.http.get<BrandInfo[]>("http://localhost:32778/Brand").subscribe(
+    this.service.getBrandAll().subscribe(
       datainfo => {
         console.log(datainfo)
         this.brandDataList = datainfo;
@@ -29,30 +30,25 @@ export class BrandPage implements OnInit {
   }
 
   postapi(name: string, ban: string, player: string) {
-    console.log(this.brandinfo);
-
     console.log(name, ban, player);
     this.brandinfo.name = name;
     this.brandinfo.bannerUrl = ban;
     this.brandinfo.playerId = player;
     console.log(this.brandinfo);
-    this.http.post<BrandCreate>('http://localhost:32778/Brand', this.brandinfo).subscribe(data => {
+    this.service.createBrand(this.brandinfo).subscribe(data => {
       console.log(data);
     })
   }
   getAPIById(id: string) {
     console.log(id);
-    
-    var data = this.http.get<BrandInfo>("http://localhost:32778/Brand/" + id);
-    data.subscribe(data => {
+    this.service.getBrandById(id).subscribe(data => {
       this.brandData = data
       console.log(data);
     });
   }
 
   DeleteData(id: string) {
-    var data = this.http.delete("http://localhost:32778/Brand/" + id);
-    data.subscribe(data => {
+    this.service.deleteBrand(id).subscribe(data => {
       console.log("Delete Success")
       this.presentAlert();
     });
