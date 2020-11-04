@@ -1,8 +1,9 @@
 import { Host, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Tournament } from 'src/models/Tournament';
-import { CreateTeamModel } from "../models/TeamModel/CreateTeamModel";
-import { CreateTeamInvitationModel } from "../models/TeamModel/CreateTeamInvitationModel";
+import { Player, PlayerReq } from 'src/models/Player';
+import { HostReq } from 'src/models/Host';
+import { Guild, GuildReq } from 'src/models/Guild';
 import { TeamRequestModel } from "../models/TeamModel/TeamRequestModel";
 import { TeamRewardPlanModel } from "../models/TeamModel/TeamRewardPlanModel";
 import { TeamModel } from "../models/TeamModel/TeamModel";
@@ -10,6 +11,8 @@ import { updateTeamJoiningModel } from "../models/TeamModel/updateTeamJoiningMod
 import { TeamInvitationModel } from '../models/TeamModel/TeamInvitationModel';
 import { BrandCreate, BrandInfo } from 'src/models/BrandModel';
 import { GameCreate, GameInfo, GameSupportReward } from 'src/models/GameModel';
+import { CreateTeamInvitationModel } from "../models/TeamModel/CreateTeamInvitationModel";
+import { CreateTeamModel } from "../models/TeamModel/CreateTeamModel";
 
 
 @Injectable({
