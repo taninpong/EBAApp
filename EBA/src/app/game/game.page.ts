@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GameInfo } from 'src/models/GameModel';
 
 @Component({
   selector: 'app-game',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamePage implements OnInit {
 
+  gameInfo: GameInfo = { name: "", bannerUrl: "", description: "" };
   constructor() { }
 
   ngOnInit() {
-  }
+  } 
 
 }
