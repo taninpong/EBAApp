@@ -9,6 +9,8 @@ import { TeamModel } from "../../models/TeamModel/TeamModel";
 import { updateTeamJoiningModel } from "../../models/TeamModel/updateTeamJoiningModel";
 import { TeamInvitationModel } from '../../models/TeamModel/TeamInvitationModel';
 
+import { AlertController } from '@ionic/angular';
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.page.html',
@@ -31,9 +33,24 @@ export class TeamPage implements OnInit {
   public delteamId: string;
   public delStatus: any;
 
-  constructor(private service: ConnectSVService) { }
+  constructor(
+    private service: ConnectSVService,
+    public alertController: AlertController
+    ) { }
 
   ngOnInit() {
+  }
+
+  async presentAlert(data : string) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Delete Team',
+      message: `Team ${data} has been deleted!`,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   createTeam() {
@@ -92,5 +109,6 @@ export class TeamPage implements OnInit {
       this.delStatus = data;
       console.log(this.delStatus);
     });
+    this.presentAlert(this.delteamId);
   }
 }
