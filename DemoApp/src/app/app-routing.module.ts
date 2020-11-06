@@ -11,6 +11,26 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'home-eba',
+    loadChildren: () => import('./home-eba/home-eba.module').then( m => m.HomeEBAPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'editprofile-img',
+    loadChildren: () => import('./editprofile-img/editprofile-img.module').then( m => m.EditprofileIMGPageModule)
+  },
+  {
+    path: 'editprofile-name',
+    loadChildren: () => import('./editprofile-name/editprofile-name.module').then( m => m.EditprofileNAMEPageModule)
+  },
+  {
+    path: 'tournament',
+    loadChildren: () => import('./tournament/tournament.module').then( m => m.TournamentPageModule)
+  },
 ];
 
 @NgModule({
