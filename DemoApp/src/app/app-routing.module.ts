@@ -10,7 +10,11 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'play-off',
+    loadChildren: () => import('./play-off/play-off.module').then( m => m.PlayOffPageModule)
   },
+
 ];
 
 @NgModule({
