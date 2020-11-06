@@ -12,4 +12,7 @@ export class HomePage {
 
   navigateToPlayoffPage = () => this.navCtrl.navigateRoot('/play-off');
 
+  goHomepage(){
+    
+  }
 }
