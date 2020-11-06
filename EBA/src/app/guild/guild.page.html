@@ -5,5 +5,70 @@
 </ion-header>
 
 <ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Name :</ion-label>
+        <ion-input placeholder="Name" [(ngModel)]="guildReq.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>bannerUrl :</ion-label>
+        <ion-input placeholder="bannerUrl" [(ngModel)]="guildReq.bannerUrl"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>playerId :</ion-label>
+        <ion-input placeholder="playerId" [(ngModel)]="guildReq.playerId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>isOfficial</ion-label>
+        <ion-checkbox checked="true" slot="start" [(ngModel)]="guildReq.isOfficial"></ion-checkbox>
+      </ion-item>
 
+      <ion-button (click)="createGuild()">Post/Guild</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button (click)="getGuild()">GET​/Guild</ion-button>
+      <ion-list *ngFor="let item of listGuild">
+        <img src="{{ item.bannerUrl }}">
+        <ion-item>_id: {{ item._id }}</ion-item>
+        <ion-item>name: {{ item.name }}</ion-item>
+        <ion-item>type: {{ item.type }}</ion-item>
+        <ion-item>createdDate: {{ item.createdDate }}</ion-item>
+        <ion-item>suspendedDate: {{ item.suspendedDate }}</ion-item>
+        <ion-item>createdByPlayerId: {{ item.createdByPlayerId }}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Guild ID :</ion-label>
+        <ion-input placeholder="Guild ID" [(ngModel)]="ID"></ion-input>
+      </ion-item>
+      <ion-button (click)="getGuildByID()">GET/Guild</ion-button>
+      <ion-list *ngIf="guild">
+        <img src="{{ guild.bannerUrl }}">
+        <ion-item>_id: {{ guild._id }}</ion-item>
+        <ion-item>name: {{ guild.name }}</ion-item>
+        <ion-item>type: {{ guild.type }}</ion-item>
+        <ion-item>createdDate: {{ guild.createdDate }}</ion-item>
+        <ion-item>suspendedDate: {{ guild.suspendedDate }}</ion-item>
+        <ion-item>createdByPlayerId: {{ guild.createdByPlayerId }}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Guild ID :</ion-label>
+        <ion-input placeholder="Guild ID" [(ngModel)]="DelID"></ion-input>
+      </ion-item>
+      <ion-button (click)="deleteGuildByID()">DEL/Guild</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

@@ -3,7 +3,7 @@ export class TeamModel {
     name: string;
     bannerUrl: string;
     captain: Captain;
-    teamMember: TeamMember[];
+    member: Member[];
     requirements: TeamRequirement[];
     tournamentId: string;
     teamRewardPlanId: string;
@@ -17,7 +17,7 @@ export class Captain {
     agentGuildId: string;
 }
 
-export class TeamMember {
+export class Member {
     priority: number
     role: string;
     playerId: string;
