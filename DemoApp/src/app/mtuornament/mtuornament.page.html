@@ -1,19 +1,17 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-row>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/dashboard"></ion-back-button>
       </ion-buttons>
       <ion-title>MTuornament</ion-title>
+      <ion-toggle slot="end" (click)="switchPlayer()"></ion-toggle>
     </ion-toolbar>
-  </ion-toolbar>
+  </ion-row>
 </ion-header>
 
 <ion-content>
-  <ion-row style="text-align: center;">
-    <ion-button round>Create team</ion-button>
-  </ion-row>
-  <ion-row>
-    <ion-button round>Jion team</ion-button>
-  </ion-row>
+  <img src="../../assets/banner-responsive.png">
+  <ion-button expand="full" routerLink="{{ page }}">Create team</ion-button>
+  <ion-button expand="full">Jion team</ion-button>
 </ion-content>
