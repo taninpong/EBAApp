@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="/dashboard"></ion-back-button>
+        <ion-back-button defaultHref="/home"></ion-back-button>
       </ion-buttons>
       <ion-title>homeEBA</ion-title>
     </ion-toolbar>
@@ -11,4 +11,27 @@
 
 <ion-content>
 
+  <img src="" width="100%" style="background-color: gray;" height="250px">
+  <ion-grid>
+    <ion-row>
+      <ion-col routerLink="/profile" routerDirection="forward"> 
+        <ion-card>
+          <ion-card-content >
+              <H2 style="text-align: center;font-size: 54px; ">P</H2>
+              <h4 style="text-align: center;">Profile</h4>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col  routerLink="/tournament" routerDirection="forward">
+        <ion-card>
+          <ion-card-content>
+            <H2 style="text-align: center;font-size: 54px; ">T</H2>
+              <h4 style="text-align: center;">Tournament</h4>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
