@@ -30,7 +30,15 @@ const routes: Routes = [
   {
     path: 'tournament',
     loadChildren: () => import('./tournament/tournament.module').then( m => m.TournamentPageModule)
+  },  {
+    path: 'resultendtournament',
+    loadChildren: () => import('./resultendtournament/resultendtournament.module').then( m => m.ResultendtournamentPageModule)
   },
+  {
+    path: 'detailendtournament',
+    loadChildren: () => import('./detailendtournament/detailendtournament.module').then( m => m.DetailendtournamentPageModule)
+  },
+
 
 ];
 

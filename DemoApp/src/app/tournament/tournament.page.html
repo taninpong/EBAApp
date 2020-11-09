@@ -14,7 +14,7 @@
 <ion-content>
   <ion-button expand="full">กำลัง Register</ion-button>
   <ion-button expand="full">กำลัง แข่ง</ion-button>
-  <ion-button expand="full">จบการแข่งแล้ว</ion-button>
+  <ion-button expand="full" routerLink="/resultendtournament" routerDirection="forward">จบการแข่งแล้ว</ion-button>
 
   <ion-card>
     <ion-card-header>
@@ -24,8 +24,8 @@
     <ion-card-content>
       Awesome content
       <ion-grid size="auto">
-        <ion-row >
-          <ion-col> 
+        <ion-row>
+          <ion-col>
             <div class="centerText">
               Match
             </div>
@@ -47,7 +47,7 @@
     My Match
   </h2>
   <div class="highlight">datetime......</div>
-  
+
   <ion-card>
     <ion-card-header>
       <ion-list>
@@ -57,22 +57,22 @@
           </ion-avatar>
           <ion-label>
             <div class="align">
-            <h2 class="ion-text-start">Team A</h2>
-          </div>
+              <h2 class="ion-text-start">Team A</h2>
+            </div>
             <p>Rating 5555</p>
           </ion-label>
         </ion-item>
       </ion-list>
       <ion-grid size="auto">
-        <ion-row >
-          <ion-col> 
+        <ion-row>
+          <ion-col>
             <div>
               Result <b>Win</b> (2-1)
             </div>
           </ion-col>
           <ion-col class="wrapper">
             <div class="rightText">
-              <ion-icon name="add-circle" class="padding"></ion-icon> 
+              <ion-icon name="add-circle" class="padding"></ion-icon>
               <ion-icon name="add-circle" class="padding"></ion-icon>
             </div>
           </ion-col>

@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>editprofileNAME</ion-title>
+    <ion-toolbar>
+      <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="/profile"></ion-back-button>
+        </ion-buttons>
+        <ion-title>EditUserName</ion-title>
+      </ion-toolbar>
+    </ion-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-input placeholder="User Name"></ion-input>
 </ion-content>
+<ion-toolbar>
+  <ion-button expand="full "routerLink="/profile" routerDirection="backward">Save</ion-button>
+</ion-toolbar>
