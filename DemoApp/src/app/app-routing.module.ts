@@ -30,7 +30,36 @@ const routes: Routes = [
   {
     path: 'tournament',
     loadChildren: () => import('./tournament/tournament.module').then( m => m.TournamentPageModule)
-  },  {
+  },
+  // {
+  //   path: 'play-off',
+  //   loadChildren: () => import('./play-off/play-off.module').then( m => m.PlayOffPageModule)
+  // },
+  {
+    path: 'mtuornament',
+    loadChildren: () => import('./mtuornament/mtuornament.module').then( m => m.MTuornamentPageModule)
+  },
+  {
+    path: 'editprofile-name',
+    loadChildren: () => import('./editprofile-name/editprofile-name.module').then( m => m.EditprofileNAMEPageModule)
+  },
+  {
+    path: 'tournament',
+    loadChildren: () => import('./tournament/tournament.module').then( m => m.TournamentPageModule)
+  },
+  {
+    path: 'create-new-team',
+    loadChildren: () => import('./create-new-team/create-new-team.module').then( m => m.CreateNewTeamPageModule)
+  },
+  {
+    path: 'add-team',
+    loadChildren: () => import('./add-team/add-team.module').then( m => m.AddTeamPageModule)
+  },
+  {
+    path: 'add-info',
+    loadChildren: () => import('./add-info/add-info.module').then( m => m.AddInfoPageModule)
+  },
+  {
     path: 'matching',
     loadChildren: () => import('./matching/matching.module').then( m => m.MatchingPageModule)
   },

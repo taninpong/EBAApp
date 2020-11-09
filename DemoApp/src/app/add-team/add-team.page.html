@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/dashboard"></ion-back-button>
+    </ion-buttons>
+    <ion-title>CreateNewTeam</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <H3>Team infomation</H3>
+  <ion-list>
+    <ion-item lines="none">
+      <ion-label>Team name</ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input [(ngModel)]="player_A.teamName"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item>
+      <img src="{{ player_A.teamLogo }}">
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="photo()">Uplaod Photo</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" (click)="OK()">OK</ion-button>
+</ion-footer>
