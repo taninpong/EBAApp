@@ -46,7 +46,8 @@ const routes: Routes = [
   {
     path: 'tournament',
     loadChildren: () => import('./tournament/tournament.module').then( m => m.TournamentPageModule)
-  },  {
+  },
+  {
     path: 'create-new-team',
     loadChildren: () => import('./create-new-team/create-new-team.module').then( m => m.CreateNewTeamPageModule)
   },
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'add-info',
     loadChildren: () => import('./add-info/add-info.module').then( m => m.AddInfoPageModule)
+  },
+  {
+    path: 'matching',
+    loadChildren: () => import('./matching/matching.module').then( m => m.MatchingPageModule)
   },
 
 
