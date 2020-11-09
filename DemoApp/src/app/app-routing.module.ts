@@ -34,7 +34,11 @@ const routes: Routes = [
   {
     path: 'play-off',
     loadChildren: () => import('./play-off/play-off.module').then( m => m.PlayOffPageModule)
+  },  {
+    path: 'mtuornament',
+    loadChildren: () => import('./mtuornament/mtuornament.module').then( m => m.MTuornamentPageModule)
   },
+
 
 ];
 
