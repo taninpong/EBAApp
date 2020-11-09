@@ -34,10 +34,21 @@ const routes: Routes = [
   {
     path: 'play-off',
     loadChildren: () => import('./play-off/play-off.module').then( m => m.PlayOffPageModule)
-  },  {
+  },
+  {
     path: 'mtuornament',
     loadChildren: () => import('./mtuornament/mtuornament.module').then( m => m.MTuornamentPageModule)
   },
+  {
+    path: 'editprofile-name',
+    loadChildren: () => import('./editprofile-name/editprofile-name.module').then( m => m.EditprofileNAMEPageModule)
+  },
+  {
+    path: 'tournament',
+    loadChildren: () => import('./tournament/tournament.module').then( m => m.TournamentPageModule)
+  },
+
+];
 
 
 ];
