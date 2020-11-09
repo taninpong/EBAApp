@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'detailendtournament',
     loadChildren: () => import('./detailendtournament/detailendtournament.module').then( m => m.DetailendtournamentPageModule)
   },
+  {
+    path: 'matching',
+    loadChildren: () => import('./matching/matching.module').then( m => m.MatchingPageModule)
+  },
 
 
 ];
