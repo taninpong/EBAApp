@@ -66,10 +66,15 @@ const routes: Routes = [
   {
     path: 'match-result',
     loadChildren: () => import('./match-result/match-result.module').then( m => m.MatchResultPageModule)
-  },  {
+  },
+  {
     path: 'result-preview',
     loadChildren: () => import('./result-preview/result-preview.module').then( m => m.ResultPreviewPageModule)
-  },
+  },  {
+    path: 'team-modal',
+    loadChildren: () => import('./team-modal/team-modal.module').then( m => m.TeamModalPageModule)
+  }
+
 
 
 

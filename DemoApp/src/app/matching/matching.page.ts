@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, NavigationExtras } from "@angular/router";
+import { TeamModalPage } from "../team-modal/team-modal.page";
+import { ModalController } from "@ionic/angular";
 
 @Component({
   selector: "app-matching",
@@ -10,6 +12,7 @@ export class MatchingPage implements OnInit {
   currectTeam = {
     teamName: "Rama ETA",
     rating: 9999,
+    seeding: 25
   };
 
   lsitTeam = [
@@ -36,7 +39,7 @@ export class MatchingPage implements OnInit {
     },
   ];
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,public modalController: ModalController) {}
 
   ngOnInit() {}
 
@@ -49,5 +52,17 @@ export class MatchingPage implements OnInit {
     this.router.navigate(["match-result"], navigationExtras);
     console.log(`isCaptan : ${isCaptan}`);
     console.log(isCaptan);
+  }
+  async detailTeam(){
+    console.log("Click Avatar");
+    const modal = await this.modalController.create({
+      component: TeamModalPage,
+      componentProps: {
+        teamName: this.currectTeam.teamName,
+        rating: this.currectTeam.rating,
+        seeding: this.currectTeam.seeding
+      }
+    });
+    return await modal.present();
   }
 }
