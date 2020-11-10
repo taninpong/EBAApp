@@ -11,41 +11,45 @@
 
 <ion-content>
 
-<div class="date">
-  <ion-button fill="clear" shape="round" color="medium" disabled="true">
-    Match Result 12 May 2020 - 12:00
-  </ion-button>
-</div>
+  <div class="date">
+    <ion-button fill="clear" shape="round" color="medium" disabled="true">
+      Match Result 12 May 2020 - 12:00
+    </ion-button>
+  </div>
 
 
   <ion-item>
     <ion-grid size="auto" class="pad">
-      <ion-row >
-        <ion-col> 
+      <ion-row>
+        <ion-col>
           <div class="centerText">
-            
+
             <ion-avatar class="avatar">
               <img src="../../assets/icon/pngwing.com.png">
             </ion-avatar>
-            <div class="teamName"><h2>Team A</h2></div>
-  
+            <div class="teamName">
+              <h2>Team A</h2>
+            </div>
+
           </div>
         </ion-col>
         <ion-col class="wrapper">
           <div class="centerText">
-            
+
             <h1>VS</h1>
-  
+
           </div>
         </ion-col>
         <ion-col class="wrapper">
           <div class="centerText">
-  
+
             <ion-avatar class="avatar">
               <img src="../../assets/icon/pngwing.com.png">
             </ion-avatar>
-            <div class="teamName"><h2>Team B</h2></div>
-  
+            <div class="teamName">
+              <h2>Team B</h2>
+            </div>
+
           </div>
         </ion-col>
       </ion-row>
@@ -53,13 +57,63 @@
   </ion-item>
 
   <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-      <ion-card-title>Awesome Title</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Awesome content
+    <ion-card-content *ngIf="data;else notCaptanSection">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col>
+            <h1>Game 1</h1>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Result :</ion-label>
+              <ion-select interface="popover">
+                <ion-select-option value="brown">Win</ion-select-option>
+                <ion-select-option value="blonde">Lose</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" shape="round" color="medium">
+              Upload SS
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <img src='./assets/thumbnail.png' class="thumbnailSize">
+      <div>Upload date : 12 May 2020 -13:00</div>
     </ion-card-content>
+
+    <ng-template #notCaptanSection>
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col>
+              <h1>Game 1</h1>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+              <ion-item>
+
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <div>
+                <h2>???</h2>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ng-template>
   </ion-card>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+      Next
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
