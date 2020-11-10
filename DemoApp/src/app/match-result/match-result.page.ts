@@ -20,5 +20,7 @@ export class MatchResultPage implements OnInit {
   ngOnInit() {
     console.log(this.data);
   }
-  onClick() {}
+  openResultPreviewPage() {
+    this.router.navigate(["result-preview"]);
+  }
 }

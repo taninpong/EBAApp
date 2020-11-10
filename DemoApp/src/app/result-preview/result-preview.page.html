@@ -4,7 +4,7 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/home-eba"></ion-back-button>
       </ion-buttons>
-      <ion-title>Match Result</ion-title>
+      <ion-title>Result Preview</ion-title>
     </ion-toolbar>
   </ion-toolbar>
 </ion-header>
@@ -24,6 +24,8 @@
         <ion-col>
           <div class="centerText">
 
+            <!-- Team A -->
+
             <ion-avatar class="avatar">
               <img src="../../assets/icon/pngwing.com.png">
             </ion-avatar>
@@ -33,6 +35,17 @@
 
           </div>
         </ion-col>
+
+        <ion-col class="wrapper" size="1">
+          <div class="centerText">
+
+            <h1>2</h1>
+
+          </div>
+        </ion-col>
+
+        <!-- Team A -->
+
         <ion-col class="wrapper">
           <div class="centerText">
 
@@ -40,6 +53,17 @@
 
           </div>
         </ion-col>
+
+        <!-- Team B -->
+
+        <ion-col class="wrapper" size="1">
+          <div class="centerText">
+
+            <h1>1</h1>
+
+          </div>
+        </ion-col>
+
         <ion-col class="wrapper">
           <div class="centerText">
 
@@ -50,6 +74,8 @@
               <h2>Team B</h2>
             </div>
 
+            <!-- Team B -->
+
           </div>
         </ion-col>
       </ion-row>
@@ -57,7 +83,7 @@
   </ion-item>
 
   <ion-card>
-    <ion-card-content *ngIf="data;else notCaptanSection">
+    <ion-card-content>
       <ion-grid fixed>
         <ion-row>
           <ion-col>
@@ -65,17 +91,11 @@
           </ion-col>
           <ion-col></ion-col>
           <ion-col>
-            <ion-item>
-              <ion-label>Result :</ion-label>
-              <ion-select interface="popover">
-                <ion-select-option value="brown">Win</ion-select-option>
-                <ion-select-option value="blonde">Lose</ion-select-option>
-              </ion-select>
-            </ion-item>
+
           </ion-col>
           <ion-col>
-            <ion-button fill="clear" shape="round" color="medium">
-              Upload SS
+            <ion-button fill="clear" shape="round" color="success">
+              Win
             </ion-button>
           </ion-col>
         </ion-row>
@@ -83,37 +103,60 @@
       <img src='./assets/thumbnail.png' class="thumbnailSize">
       <div>Upload date : 12 May 2020 -13:00</div>
     </ion-card-content>
+  </ion-card>
 
-    <ng-template #notCaptanSection>
-      <ion-card-content>
-        <ion-grid fixed>
-          <ion-row>
-            <ion-col>
-              <h1>Game 1</h1>
-            </ion-col>
-            <ion-col></ion-col>
-            <ion-col>
-              <ion-item>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col>
+            <h1>Game 2</h1>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col>
 
-              </ion-item>
-            </ion-col>
-            <ion-col>
-              <div>
-                <h2>???</h2>
-              </div>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-      </ion-card-content>
-    </ng-template>
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" shape="round" color="success">
+              Win
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <img src='./assets/thumbnail.png' class="thumbnailSize">
+      <div>Upload date : 12 May 2020 -13:00</div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col>
+            <h1>Game 3</h1>
+          </ion-col>
+          <ion-col></ion-col>
+          <ion-col>
+
+          </ion-col>
+          <ion-col>
+            <ion-button fill="clear" shape="round" color="danger">
+              Lost
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <img src='./assets/thumbnail.png' class="thumbnailSize">
+      <div>Upload date : 12 May 2020 -13:00</div>
+    </ion-card-content>
   </ion-card>
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button (click)="openResultPreviewPage()" expand="block" fill="clear" shape="round">
-      Next
+    <ion-button (click)="sendResult()" expand="block" fill="clear" shape="round">
+      Send Result
     </ion-button>
   </ion-toolbar>
 </ion-footer>
