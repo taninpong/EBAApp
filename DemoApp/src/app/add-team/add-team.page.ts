@@ -11,23 +11,27 @@ export class AddTeamPage implements OnInit {
 
   public player_A: Player;
   public page: string;
-  constructor(private service: PlayerService) { 
+  constructor(private service: PlayerService) {
     this.player_A = this.service.Player_A;
     console.log(this.player_A);
     if (this.player_A.inGameNamr == "" || this.player_A.role == "" || this.player_A.email == "" || this.player_A.tel == "") {
       this.page = "/add-info";
+    } else {
+      this.page = "/create-new-team";
     }
-    
+
   }
 
   ngOnInit() {
   }
 
-  photo(){
+  photo() {
     this.player_A.teamLogo = "../../assets/teamLogo.png";
   }
 
-  OK(){
+  OK() {
     this.service.Player_A = this.player_A;
+    console.log(this.service.Player_A);
+    
   }
 }

@@ -10,14 +10,15 @@ export class PlayerService {
   public Player_B: Player = new Player;
   constructor() {
     this.Player_A = {
-      name: "",
+      name: "Sorry",
       email: "",
       inGameNamr: "",
       role: "",
       teamLogo: "",
       teamName: "",
       tel: "",
-      tuornament: false
+      tuornament: false,
+      leadder: false
     }
   }
 }

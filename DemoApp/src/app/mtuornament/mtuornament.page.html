@@ -12,6 +12,8 @@
 
 <ion-content>
   <img src="../../assets/banner-responsive.png">
-  <ion-button expand="full" routerLink="{{ page }}">Create team</ion-button>
-  <ion-button expand="full">Jion team</ion-button>
+  <div *ngIf="player.tuornament == false">
+    <ion-button expand="full" routerLink="{{ page }}">Create team</ion-button>
+    <ion-button expand="full">Jion team</ion-button>
+  </div>
 </ion-content>

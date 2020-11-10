@@ -7,4 +7,5 @@ export class Player {
     email: string;
     tel: string;
     tuornament: boolean;
+    leadder: boolean;
 }

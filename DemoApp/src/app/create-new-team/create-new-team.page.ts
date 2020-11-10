@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/models/Player';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -9,17 +10,22 @@ import { PlayerService } from '../player.service';
 export class CreateNewTeamPage implements OnInit {
 
 
-  public teamName: string;
+  public player: Player;
 
   constructor(private service: PlayerService) {
-    this.teamName ="OhNoooooo??";
-    console.log(this.teamName);
-    
+    this.player = this.service.Player_A;
   }
 
   ngOnInit() {
   }
 
+  confirm(){
+    this.player.leadder = true;
+    this.player.tuornament = true;
+    this.service.Player_A = this.player;
+    console.log(this.service.Player_A);
+    
+  }
 
 
 }

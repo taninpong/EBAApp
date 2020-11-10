@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from 'src/models/Player';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-add-info',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddInfoPage implements OnInit {
 
-  constructor() { }
+  public player: Player;
+  constructor(private service: PlayerService) { 
+    this.player = this.service.Player_A
+  }
 
   ngOnInit() {
   }
 
+  addInfo(){
+    console.log(this.player);
+    
+  }
 }

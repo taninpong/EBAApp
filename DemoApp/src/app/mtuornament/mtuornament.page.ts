@@ -9,16 +9,18 @@ import { PlayerService } from '../player.service';
 })
 export class MTuornamentPage implements OnInit {
 
-  public player_A: Player;
-  public player_B: Player = new Player;
+  public player: Player;
   public page: string;
   constructor(private service: PlayerService) {
-    this.player_A = this.service.Player_A;
-    this.page = "/create-new-team";
-    this.checkStatus();
+    this.player = this.service.Player_A;
+    console.log(this.player);
+
   }
 
   ngOnInit() {
+    this.page = this.checkStatus();
+    console.log(this.page);
+    
   }
 
   switchPlayer() {
@@ -27,8 +29,12 @@ export class MTuornamentPage implements OnInit {
   }
 
   checkStatus() {
-    if (this.player_A.teamName == "") {
-      this.page = "/add-team";
+    if (this.player.teamName == "") {
+      return "/add-team";
+    } else if (this.player.inGameNamr == "" || this.player.role == "" || this.player.email == "" || this.player.tel == "") {
+      return "/add-info";
+    } else {
+      return "/create-new-team";
     }
   }
 }
