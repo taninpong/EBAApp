@@ -4,53 +4,19 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/profile"></ion-back-button>
       </ion-buttons>
-      <ion-title>editprofileIMG</ion-title>
+      <ion-title>EditImage</ion-title>
     </ion-toolbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid style="text-align: center;">
+  <ion-grid>
     <ion-row>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
-      </ion-col>
-      <ion-col>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-          width="100px" height="100px" routerLink="/profile" routerDirection="backward">
+      <ion-col *ngFor="let item of images" size="4">
+        <ion-avatar>
+          <img [src]="item" width="100px" height="100px" routerLink="/profile" routerDirection="backward"
+            (click)="ChangeImg(item)">
+        </ion-avatar>
       </ion-col>
     </ion-row>
   </ion-grid>

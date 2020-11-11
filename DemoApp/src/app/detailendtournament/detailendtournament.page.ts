@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { teamInfo } from 'src/models/Profile';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-detailendtournament',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailendtournamentPage implements OnInit {
 
-  constructor() { }
+  teamDetail: teamInfo[];
+  constructor(public service: PlayerService) {
+    this.teamDetail = this.service.teamInfo;
+    console.log(this.teamDetail);
+    console.log(this.service.teamInfo);
+
+  }
 
   ngOnInit() {
   }
