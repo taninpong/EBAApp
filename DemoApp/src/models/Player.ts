@@ -8,4 +8,5 @@ export class Player {
     tel: string;
     tuornament: boolean;
     leadder: boolean;
+    rating: number;
 }

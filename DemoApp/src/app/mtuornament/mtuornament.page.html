@@ -12,8 +12,39 @@
 
 <ion-content>
   <img src="../../assets/banner-responsive.png">
+  <div *ngIf="player.tuornament == true">
+    <div style="text-align: center;">
+      <img src="{{ service.team.teamLogo }}" width="100px">
+    </div>
+    <ion-item lines="none" class="ion-text-center">
+      <ion-label>{{ service.team.teamName }}</ion-label>
+    </ion-item>
+    <ion-item lines="none" class="ion-text-center">
+      <ion-label>rating {{ service.team.rating }}</ion-label>
+    </ion-item>
+    <h4>Player</h4>
+    <ion-card>
+      <ion-card-content style="padding: unset;" (click)="presentActionSheet()">
+        <ion-item lines="none">
+          <ion-avatar slot="start">
+            <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+          </ion-avatar>
+          <ion-label>
+            <p>EBA name: {{ service.team.leadder.name }}</p>
+            <p>In Game Name: {{ service.team.leadder.inGameNamr }}</p>
+            <p>Rating: {{ service.team.leadder.rating }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
   <div *ngIf="player.tuornament == false">
     <ion-button expand="full" routerLink="{{ page }}">Create team</ion-button>
     <ion-button expand="full">Jion team</ion-button>
   </div>
+  <ion-item class="ion-text-center" (click)="presentActionSheet()">
+    <ion-label>Test</ion-label>
+  </ion-item>
 </ion-content>

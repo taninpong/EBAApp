@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/models/Player';
+import { Team } from 'src/models/Team';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -11,21 +12,28 @@ export class MTuornamentPage implements OnInit {
 
   public player: Player;
   public page: string;
+  public swithcAcc: boolean;
   constructor(private service: PlayerService) {
     this.player = this.service.Player_A;
     console.log(this.player);
-
   }
 
   ngOnInit() {
     this.page = this.checkStatus();
     console.log(this.page);
-    
+
   }
 
   switchPlayer() {
-    console.log("A");
-
+    this.swithcAcc = !this.swithcAcc;
+    console.log(this.swithcAcc);
+    if (this.swithcAcc) {
+      this.player = this.service.Player_B;
+    }else{
+      this.player = this.service.Player_A;
+    }
+    console.log(this.player);
+    
   }
 
   checkStatus() {
