@@ -6,4 +6,5 @@ export class Team {
     rating: number;
     leadder: Player;
     player: Player[];
+    request: Player[];
 }

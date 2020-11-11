@@ -65,6 +65,7 @@ export class PlayerService {
       rating: 1,
       teamLogo: "",
       teamName: "",
+      request:[]
     }
     this.Profile = {
       name: "Player001",

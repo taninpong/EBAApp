@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home-eba"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Join Team by Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="../../assets/banner-responsive.png">
+  <div style="text-align: center;">
+
+    <H3>Search Team by Team ID</H3>
+  </div>
+  <ion-item lines="none" class="ion-text-center">
+    <ion-label>Enter Team ID</ion-label>
+  </ion-item>
+  <ion-item lines="none" class="ion-text-center">
+    <ion-input [(ngModel)]="search"></ion-input>
+  </ion-item>
+  <ion-item lines="none" class="ion-text-center" *ngIf="found == false">
+    <ion-label style="color: red;" >Team ID not found</ion-label>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" (click)="searchTeam()">Search</ion-button>
+</ion-footer>
+<!--  -->

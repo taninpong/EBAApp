@@ -90,7 +90,11 @@ const routes: Routes = [
   {
     path: 'team-detail',
     loadChildren: () => import('./team-detail/team-detail.module').then(m => m.TeamDetailPageModule)
+  },  {
+    path: 'search-team',
+    loadChildren: () => import('./search-team/search-team.module').then( m => m.SearchTeamPageModule)
   }
+
 ];
 
 @NgModule({
