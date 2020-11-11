@@ -4,7 +4,7 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/home-eba"></ion-back-button>
       </ion-buttons>
-      <ion-title>Matching</ion-title>
+      <ion-title>Tournamet: World cup of Asgard</ion-title>
     </ion-toolbar>
   </ion-toolbar>
 </ion-header>
@@ -12,42 +12,43 @@
 
 <ion-content>
 
+  
   <img src='./assets/thumbnail.png' class="thumbnailSize">
   <ion-card>
 
     <ion-card-header>
 
-      <ion-list>
+      <ion-list *ngIf="currectTeam" class="cardDesing">
         <ion-item>
-          <ion-avatar slot="start">
+          <ion-avatar slot="start" (click)="detailTeam()">
             <img src="../../assets/icon/pngwing.com.png">
           </ion-avatar>
           <ion-label>
             <div class="align">
-            <h2 class="ion-text-start">Team Name</h2>
-          </div>
-            <p>Rating 8456</p>
+              <h2 class="ion-text-start">{{currectTeam.teamName}}</h2>
+            </div>
+            <p>Rating :{{currectTeam.rating}}</p>
           </ion-label>
         </ion-item>
       </ion-list>
 
     </ion-card-header>
-    
+
     <ion-card-content>
 
       <ion-grid size="auto">
-        <ion-row >
-          <ion-col> 
+        <ion-row>
+          <ion-col>
             <div class="centerText">
               <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
-                <ion-icon name="heart" ></ion-icon> Match
+                <ion-icon name="heart"></ion-icon> Match
               </ion-button>
             </div>
           </ion-col>
           <ion-col class="wrapper">
             <div class="centerText">
               <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
-                <ion-icon name="heart" ></ion-icon> Chat
+                <ion-icon name="heart"></ion-icon> Chat
               </ion-button>
             </div>
           </ion-col>
@@ -64,8 +65,11 @@
   <h2 class="centerText">
     My Match
   </h2>
-  <div class="highlight">datetime......</div>
-  
+
+  <div *ngFor="let team of lsitTeam">
+    <div class="dateTime">
+      {{team.date}}
+    </div>
   <ion-card>
     <ion-card-header>
 
@@ -76,26 +80,26 @@
           </ion-avatar>
           <ion-label>
             <div class="align">
-            <h2 class="ion-text-start">Team A</h2>
-          </div>
-            <p>Rating 5555</p>
+              <h2 class="ion-text-start">{{team.teamName}}</h2>
+            </div>
+            <p>Rating: {{team.rating}}</p>
           </ion-label>
         </ion-item>
       </ion-list>
 
       <ion-grid size="auto">
         <ion-row>
-          <ion-col class="ion-align-self-center"> 
+          <ion-col class="ion-align-self-center">
             <div>
-              Result <b>Win</b> (2-1)
+              Result <b>{{team.result}}</b> ({{team.score}})
             </div>
           </ion-col>
           <ion-col class="wrapper">
             <div class="rightText">
-              <ion-button (click)="onClick()" fill="clear" shape="round">
+              <ion-button (click)="openDetailsWithState(true)" fill="clear" shape="round">
                 <ion-icon slot="icon-only" name="person"></ion-icon>
               </ion-button>
-              <ion-button (click)="onClick()" fill="clear" shape="round">
+              <ion-button (click)="openDetailsWithState(false)" fill="clear" shape="round">
                 <ion-icon slot="icon-only" name="people"></ion-icon>
               </ion-button>
             </div>
@@ -108,48 +112,7 @@
 
     </ion-card-content>
   </ion-card>
-  
-  <ion-card>
-    <ion-card-header>
 
-      <ion-list>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img src="../../assets/icon/pngwing.com.png">
-          </ion-avatar>
-          <ion-label>
-            <div class="align">
-            <h2 class="ion-text-start">Team C</h2>
-          </div>
-            <p>Rating 12545</p>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-
-      <ion-grid size="auto">
-        <ion-row>
-          <ion-col class="ion-align-self-center"> 
-            <div>
-              Result <b>Win</b> (2-1)
-            </div>
-          </ion-col>
-          <ion-col class="wrapper">
-            <div class="rightText">
-              <ion-button (click)="onClick()" fill="clear" shape="round">
-                <ion-icon slot="icon-only" name="person"></ion-icon>
-              </ion-button>
-              <ion-button (click)="onClick()" fill="clear" shape="round">
-                <ion-icon slot="icon-only" name="people"></ion-icon>
-              </ion-button>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-    </ion-card-header>
-    <ion-card-content>
-
-    </ion-card-content>
-  </ion-card>
+</div>
 
 </ion-content>
