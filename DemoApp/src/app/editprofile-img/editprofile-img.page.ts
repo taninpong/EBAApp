@@ -23,7 +23,7 @@ export class EditprofileIMGPage implements OnInit {
   ngOnInit() {
   }
   ChangeImg(img: string) {
-    this.Data.Profile.image = img;
+    this.Data.Player_A.teamLogo = img;
   }
 
 }

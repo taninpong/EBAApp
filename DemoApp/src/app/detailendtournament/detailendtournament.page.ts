@@ -12,9 +12,6 @@ export class DetailendtournamentPage implements OnInit {
   teamDetail: teamInfo[];
   constructor(public service: PlayerService) {
     this.teamDetail = this.service.teamInfo;
-    console.log(this.teamDetail);
-    console.log(this.service.teamInfo);
-
   }
 
   ngOnInit() {

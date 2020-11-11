@@ -11,7 +11,6 @@ export class PlayerService {
   public Player_A: Player = new Player;
   public Player_B: Player = new Player;
   public team: Team = new Team;
-  public Profile: profile = new profile;
   teamInfo: teamInfo[] = [
     { name: 'Team001', image: 'https://dynamic.brandcrowd.com/asset/logo/9173af46-4ce3-460a-930b-c6486f46cc9f/logo?v=4', rating: 10 },
     { name: 'Team002', image: 'https://image.freepik.com/free-vector/e-sports-team-logo-with-dragon_113398-3.jpg', rating: 20 },
@@ -37,12 +36,12 @@ export class PlayerService {
   constructor() {
     this.Player_A = {
       name: "Sorry",
-      email: "",
+      email: "demo@ggmail.com",
       inGameNamr: "",
       role: "",
-      teamLogo: "",
+      teamLogo: "https://png.pngtree.com/element_our/png_detail/20181102/avatar-profile-logo-vector-emblem-illustration-modern-illustration-png_227486.jpg",
       teamName: "",
-      tel: "",
+      tel: "08123456789",
       tuornament: false,
       leadder: false,
       rating: 1
@@ -66,17 +65,6 @@ export class PlayerService {
       teamLogo: "",
       teamName: "",
     }
-    this.Profile = {
-      name: "Player001",
-      image: 'https://png.pngtree.com/element_our/png_detail/20181102/avatar-profile-logo-vector-emblem-illustration-modern-illustration-png_227486.jpg',
-      contact: {
-        email: 'demo@ggmail.com',
-        tel: '08123456789'
-      },
-      rating: 55455
-    };
-
-
   }
 }
 
