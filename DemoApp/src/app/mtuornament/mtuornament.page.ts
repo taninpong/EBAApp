@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 import { Player } from 'src/models/Player';
 import { Team } from 'src/models/Team';
+import { DlgPlayerInfoPage } from '../dlg-player-info/dlg-player-info.page';
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -13,7 +15,7 @@ export class MTuornamentPage implements OnInit {
   public player: Player;
   public page: string;
   public swithcAcc: boolean;
-  constructor(private service: PlayerService) {
+  constructor(private service: PlayerService, private dlg: ModalController) {
     this.player = this.service.Player_A;
     console.log(this.player);
   }
@@ -29,11 +31,19 @@ export class MTuornamentPage implements OnInit {
     console.log(this.swithcAcc);
     if (this.swithcAcc) {
       this.player = this.service.Player_B;
-    }else{
+    } else {
       this.player = this.service.Player_A;
     }
     console.log(this.player);
-    
+
+  }
+
+  async presentModal() {
+    const modal = await this.dlg.create({
+      component: DlgPlayerInfoPage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
   }
 
   checkStatus() {

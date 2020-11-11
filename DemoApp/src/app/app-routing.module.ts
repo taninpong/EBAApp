@@ -62,7 +62,11 @@ const routes: Routes = [
   {
     path: 'matching',
     loadChildren: () => import('./matching/matching.module').then( m => m.MatchingPageModule)
+  },  {
+    path: 'dlg-player-info',
+    loadChildren: () => import('./dlg-player-info/dlg-player-info.module').then( m => m.DlgPlayerInfoPageModule)
   },
+
 
 
 ];
