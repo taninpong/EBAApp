@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tournament"></ion-back-button>
+      </ion-buttons>
+      <ion-title>resultendtournament</ion-title>
+    </ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-toolbar>
+  <ion-item>
+    <ion-button class="ion-align-items-end">Tournament Detail</ion-button>
+  </ion-item>
+  <ion-item>
+    <ion-button routerLink="/detailendtournament" routerDirection="forward">Standing</ion-button>
+  </ion-item>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card *ngFor="let item of service.teamInfo; let i = index">
+    <ion-card-content *ngIf="i+1 < 9">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1" class="ion-align-self-center">
+            <ion-label>
+              {{i+1}}
+            </ion-label>
+          </ion-col>
+          <ion-col size="8">
+            <ion-item lines="none">
+              <img src="{{item.image}}" width="50px" height="50px">
+              <ion-label>
+                {{item.name}}
+              </ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="3" class="ion-align-self-center">
+            <h3>Rating {{item.rating}}</h3>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -10,8 +10,45 @@
 </ion-header>
 
 <ion-content>
-  <ion-item style="text-align: center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/768px-User_icon_2.svg.png"
-      width="100px" height="100px" >
-  </ion-item>
+  <div class="ion-text-center">
+    <img [src]="Data.Profile.image" width="100px" height="100px" routerLink="/editprofile-img"
+      routerDirection="forward">
+    <h1>{{Data.Profile.name}}</h1>
+    <ion-button routerLink="/editprofile-name" routerDirection="forward">Edit Name</ion-button>
+  </div>
+  <ion-item-divider></ion-item-divider>
+  <div class="ion-padding">
+    <h3>Achievement</h3>
+  </div>
+  <ion-item-divider></ion-item-divider>
+  <div class="ion-padding">
+    <h3>Rating</h3>
+    <h5>{{Data.Profile.rating}}</h5>
+  </div>
+  <ion-item-divider></ion-item-divider>
+
+  <div class="ion-padding">
+    <h3>Contact</h3>
+    <ion-list>
+      <ion-item>
+        <ion-label>E-mail</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label> {{Data.Profile.contact.email}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tel.</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{Data.Profile.contact.tel}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <ion-item-divider></ion-item-divider>
+
+  <div class="ion-padding">
+    <h3>Setting</h3>
+  </div>
+
 </ion-content>

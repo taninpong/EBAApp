@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { profile } from 'src/models/Profile';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-profile',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-
-  constructor() { }
+  constructor(private Data: PlayerService) {
+    console.log(Data.Profile);
+  }
 
   ngOnInit() {
   }
