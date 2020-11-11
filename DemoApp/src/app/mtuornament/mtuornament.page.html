@@ -23,8 +23,8 @@
       <ion-label>rating {{ service.team.rating }}</ion-label>
     </ion-item>
     <h4>Player</h4>
-    <ion-card>
-      <ion-card-content style="padding: unset;" (click)="presentActionSheet()">
+    <ion-card (click)="presentModal(player)">
+      <ion-card-content style="padding: unset;">
         <ion-item lines="none">
           <ion-avatar slot="start">
             <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
@@ -44,7 +44,4 @@
     <ion-button expand="full" routerLink="{{ page }}">Create team</ion-button>
     <ion-button expand="full">Jion team</ion-button>
   </div>
-  <ion-item class="ion-text-center" (click)="presentModal()">
-    <ion-label>Test</ion-label>
-  </ion-item>
 </ion-content>

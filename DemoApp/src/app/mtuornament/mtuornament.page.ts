@@ -38,10 +38,13 @@ export class MTuornamentPage implements OnInit {
 
   }
 
-  async presentModal() {
+  async presentModal(checkLeadder: Player) {
+    console.log(checkLeadder);
     const modal = await this.dlg.create({
       component: DlgPlayerInfoPage,
-      cssClass: 'my-custom-class'
+      cssClass: 'my-custom-class',
+      componentProps: { checkLeadder },
+
     });
     return await modal.present();
   }
