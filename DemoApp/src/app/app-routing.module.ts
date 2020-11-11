@@ -73,6 +73,10 @@ const routes: Routes = [
   },  {
     path: 'team-modal',
     loadChildren: () => import('./team-modal/team-modal.module').then( m => m.TeamModalPageModule)
+  },
+  {
+    path: 'team-detail',
+    loadChildren: () => import('./team-detail/team-detail.module').then( m => m.TeamDetailPageModule)
   }
 
 

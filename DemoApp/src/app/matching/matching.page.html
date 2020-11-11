@@ -65,10 +65,12 @@
   <h2 class="centerText">
     My Match
   </h2>
-  <div class="highlight">datetime......</div>
 
-
-  <ion-card *ngFor="let team of lsitTeam">
+  <div *ngFor="let team of lsitTeam">
+    <div class="dateTime">
+      {{team.date}}
+    </div>
+  <ion-card>
     <ion-card-header>
 
       <ion-list>
@@ -110,5 +112,7 @@
 
     </ion-card-content>
   </ion-card>
+
+</div>
 
 </ion-content>

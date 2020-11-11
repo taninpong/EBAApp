@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ModalController } from "@ionic/angular";
+import { Router, NavigationExtras } from "@angular/router";
 
 @Component({
   selector: "app-team-modal",
@@ -7,17 +8,21 @@ import { ModalController } from "@ionic/angular";
   styleUrls: ["./team-modal.page.scss"],
 })
 export class TeamModalPage implements OnInit {
-  teamName;
-  rating;
-  seeding;
-  constructor(public modalController: ModalController) {}
+  constructor(
+    public modalController: ModalController,
+    private router: Router
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   async dismissModal() {
     await this.modalController.dismiss();
   }
-  teamProfile(){
-    
+  async teamProfile() {
+    await this.modalController.dismiss();
+    let navigationExtras: NavigationExtras = {
+      state: {
+      },
+    };
+    this.router.navigate(["team-detail"], navigationExtras);
   }
 }

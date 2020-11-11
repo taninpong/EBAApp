@@ -22,6 +22,7 @@ export class MatchingPage implements OnInit {
       result: "Win",
       score: "3-0",
       imgTeam: "",
+      date: "12 May 2020 - 12:20"
     },
     {
       teamName: "Team B",
@@ -29,6 +30,7 @@ export class MatchingPage implements OnInit {
       result: "Win",
       score: "2-1",
       imgTeam: "",
+      date: "13 May 2020 - 12:20"
     },
     {
       teamName: "Team H",
@@ -36,6 +38,7 @@ export class MatchingPage implements OnInit {
       result: "Lost",
       score: "0-3",
       imgTeam: "",
+      date: "14 May 2020 - 12:20"
     },
   ];
 
