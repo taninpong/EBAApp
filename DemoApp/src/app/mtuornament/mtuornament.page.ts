@@ -23,6 +23,8 @@ export class MTuornamentPage implements OnInit {
   ngOnInit() {
     this.page = this.checkStatus();
     console.log(this.page);
+    console.log(this.service.team);
+    
     console.log(this.service.team.request.length);
   }
 
