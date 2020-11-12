@@ -55,7 +55,7 @@ export class PlayerService {
       email: "",
       inGameNamr: "",
       role: "",
-      playerImg: "",
+      playerImg: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQlpy44uj57yC-pwKgzL-FIOfWgAhmsvyKrsQ&usqp=CAU",
       teamLogo: "",
       teamName: "",
       tel: "",
