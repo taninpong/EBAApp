@@ -13,17 +13,20 @@ import { TeamServiceService } from "../services/team-service.service";
   styleUrls: ["./matching.page.scss"],
 })
 export class MatchingPage implements OnInit {
-
-  private currectTeam : any;
+  private currectTeam: any;
   private lsitTeam: any;
 
-  constructor(private router: Router,public modalController: ModalController,private service: TeamServiceService) {
+  constructor(
+    private router: Router,
+    public modalController: ModalController,
+    private service: TeamServiceService
+  ) {
     this.currectTeam = {
       teamName: service.currectTeam.teamName,
       rating: service.currectTeam.rating,
-      seeding: 25
+      seeding: 25,
     };
-  
+
     this.lsitTeam = [
       {
         teamName: service.mockTeam[0].teamName,
@@ -31,7 +34,7 @@ export class MatchingPage implements OnInit {
         result: "Win",
         score: "3-0",
         imgTeam: "",
-        date: "12 May 2020 - 12:20"
+        date: "12 May 2020 - 12:20",
       },
       {
         teamName: service.mockTeam[1].teamName,
@@ -39,7 +42,7 @@ export class MatchingPage implements OnInit {
         result: "Win",
         score: "2-1",
         imgTeam: "",
-        date: "13 May 2020 - 12:20"
+        date: "13 May 2020 - 12:20",
       },
       {
         teamName: service.mockTeam[2].teamName,
@@ -47,12 +50,14 @@ export class MatchingPage implements OnInit {
         result: "Lost",
         score: "0-3",
         imgTeam: "",
-        date: "14 May 2020 - 12:20"
+        date: "14 May 2020 - 12:20",
       },
     ];
   }
 
   ngOnInit() {}
+
+  onClick() {}
 
   openDetailsWithState(isCaptan: boolean) {
     let navigationExtras: NavigationExtras = {
@@ -64,15 +69,15 @@ export class MatchingPage implements OnInit {
     console.log(`isCaptan : ${isCaptan}`);
     console.log(isCaptan);
   }
-  async detailTeam(){
+  async detailTeam() {
     console.log("Click Avatar");
     const modal = await this.modalController.create({
       component: TeamModalPage,
       componentProps: {
         teamName: this.currectTeam.teamName,
         rating: this.currectTeam.rating,
-        seeding: this.currectTeam.seeding
-      }
+        seeding: this.currectTeam.seeding,
+      },
     });
     return await modal.present();
   }
