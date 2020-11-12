@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController, NavParams } from '@ionic/angular';
 import { Player } from 'src/models/Player';
+import { Team } from 'src/models/Team';
 
 @Component({
   selector: 'app-dlg-player-detail',
@@ -8,10 +9,10 @@ import { Player } from 'src/models/Player';
   styleUrls: ['./dlg-player-detail.page.scss'],
 })
 export class DlgPlayerDetailPage implements OnInit {
-  playerData: Player;
+  teamData: Team;
   constructor(private navParams: NavParams, private dlg: ModalController) {
-    this.playerData = this.navParams.get('playerData');
-    console.log(this.playerData);
+    this.teamData = this.navParams.get('playerData');
+    console.log(this.teamData);
   }
 
   ngOnInit() {

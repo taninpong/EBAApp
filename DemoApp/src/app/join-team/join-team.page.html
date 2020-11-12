@@ -20,7 +20,7 @@
       <ion-label>rating {{ service.team.rating }}</ion-label>
     </ion-item>
     <h4>Player</h4>
-    <ion-card (click)="presentModal(player)">
+    <ion-card (click)="presentModal(service.team)">
       <ion-card-content style="padding: unset;">
         <ion-item lines="none">
           <ion-avatar slot="start">
@@ -45,6 +45,6 @@
     <ion-button (click)="sendRequest()" expand="full">Request to join</ion-button>
   </div>
   <div *ngIf="player.requestTeam != null">
-    <ion-button expand="full">Cancle Request</ion-button>
+    <ion-button expand="full" (click)="cancleRequest()">Cancle Request</ion-button>
   </div>
 </ion-footer>

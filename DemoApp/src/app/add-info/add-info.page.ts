@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Player } from 'src/models/Player';
 import { PlayerService } from '../player.service';
 
@@ -10,15 +11,21 @@ import { PlayerService } from '../player.service';
 export class AddInfoPage implements OnInit {
 
   public player: Player;
-  constructor(private service: PlayerService) { 
+  constructor(private service: PlayerService, private rout: Router) {
     this.player = this.service.player
+
   }
 
   ngOnInit() {
+
   }
 
-  addInfo(){
+  addInfo() {
     console.log(this.player);
-    
+    if (this.service.player.teamName == "") {
+      this.rout.navigate(['/join-team']);
+    } else {
+      this.rout.navigate(['/create-new-team']);
+    }
   }
 }

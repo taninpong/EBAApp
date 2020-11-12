@@ -11,35 +11,35 @@
 
 <ion-content fullscreen>
   <div class="ion-text-center ">
-    <img src="{{playerData.playerImg}}" width="100px" height="100px">
+    <img src="{{teamData.leadder.playerImg}}" width="100px" height="100px">
   </div>
   <ion-list>
     <ion-item>
       <ion-label>
         <h2>Eba User</h2>
-        <p>{{playerData.name}}</p>
+        <p>{{teamData.leadder.name}}</p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-label>
         <h2>In Game Name</h2>
-        <p>{{playerData.inGameNamr}}</p>
-        <p *ngIf="playerData.inGameNamr == ''|| playerData.inGameNamr== null ">-</p>
+        <p>{{teamData.leadder.name}}</p>
+        <p *ngIf="teamData.leadder.name == ''|| teamData.leadder.name== null ">-</p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-label>
         <h2>Rating</h2>
-        <p>{{playerData.rating}}</p>
+        <p>{{teamData.leadder.rating}}</p>
       </ion-label>
     </ion-item>
     <ion-item>
       <ion-label>
         <h2>Contact</h2>
-        <p>{{playerData.email}}</p>
-        <p *ngIf="playerData.email == ''|| playerData.email== null ">-</p>
-        <p>{{playerData.tel}}</p>
-        <p *ngIf="playerData.tel == ''|| playerData.tel== null ">-</p>
+        <p>{{teamData.leadder.email}}</p>
+        <p *ngIf="teamData.leadder.email == ''|| teamData.leadder.email== null ">-</p>
+        <p>{{teamData.leadder.tel}}</p>
+        <p *ngIf="teamData.leadder.tel == ''|| teamData.leadder.tel== null ">-</p>
       </ion-label>
     </ion-item>
   </ion-list>

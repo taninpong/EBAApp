@@ -14,7 +14,7 @@ export class DlgPlayerInfoPage implements OnInit {
   constructor(private dlg: ModalController, public navCtrl: NavController, private navParams: NavParams, public alertController: AlertController, private service: PlayerService) {
     this.playerData = this.navParams.get('checkLeadder');
     console.log(this.playerData);
-
+    console.log(this.service.player, "PlayERs");
   }
 
   ngOnInit() {
@@ -76,5 +76,12 @@ export class DlgPlayerInfoPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  LeaveTeam() {
+    this.service.team.player = [];
+    this.service.Player_B.tuornament = false;
+    console.log(this.service.team);
+
   }
 }

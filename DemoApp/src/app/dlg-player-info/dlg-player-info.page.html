@@ -47,7 +47,13 @@
   </ion-list>
 </ion-content>
 <ion-toolbar>
-  <ion-button expand="full " (click)="PasBand()">PasBand</ion-button>
+  <ion-button expand="full " (click)="PasBand()"
+    *ngIf="service.player.leadder == true && service.player.name == playerData.name">PasBand</ion-button>
+  <ion-button expand="full " *ngIf="service.player.leadder == true && service.player.name != playerData.name">Kick
+    Player</ion-button>
+  <ion-button expand="full " *ngIf="service.player.leadder == false && service.player.name == playerData.name"
+    (click)="LeaveTeam()">Leave
+    Team</ion-button>
   <ion-button expand="full " (click)="dismissModal2()">View
     Main Profile
   </ion-button>

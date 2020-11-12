@@ -25,7 +25,7 @@
     <h4>Player</h4>
     <ion-card>
       <ion-card-content style="padding: unset;">
-        <ion-item lines="none" (click)="presentModal(player)">
+        <ion-item lines="none" (click)="presentModal(service.team.leadder)">
           <ion-avatar slot="start">
             <img src="{{ service.team.leadder.playerImg }}">
           </ion-avatar>
@@ -46,7 +46,7 @@
           <ion-label>
             <p>EBA name: {{ item.name }}</p>
             <p>In Game Name: {{ item.inGameNamr }}</p>
-            <p>Rating: {{ item.leadder.rating }}</p>
+            <p>Rating: {{ item.rating }}</p>
           </ion-label>
         </ion-item>
       </ion-list>
@@ -61,5 +61,5 @@
 </ion-content>
 
 <ion-footer *ngIf="service.team.request.length != 0">
-  <ion-button expand="full" (click)="accept()">Create team</ion-button>
+  <ion-button expand="full" (click)="accept()">Accept request</ion-button>
 </ion-footer>
