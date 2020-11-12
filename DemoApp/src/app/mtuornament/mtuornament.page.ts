@@ -16,7 +16,7 @@ export class MTuornamentPage implements OnInit {
   public page: string;
   public swithcAcc: boolean;
   constructor(private service: PlayerService, private dlg: ModalController) {
-    this.player = this.service.Player_A;
+    this.player = this.service.player;
     console.log(this.player);
   }
 
@@ -26,17 +26,17 @@ export class MTuornamentPage implements OnInit {
 
   }
 
-  switchPlayer() {
-    this.swithcAcc = !this.swithcAcc;
-    console.log(this.swithcAcc);
-    if (this.swithcAcc) {
-      this.player = this.service.Player_B;
-    } else {
-      this.player = this.service.Player_A;
-    }
-    console.log(this.player);
+  // switchPlayer() {
+  //   this.swithcAcc = !this.swithcAcc;
+  //   console.log(this.swithcAcc);
+  //   if (this.swithcAcc) {
+  //     this.player = this.service.Player_B;
+  //   } else {
+  //     this.player = this.service.Player_A;
+  //   }
+  //   console.log(this.player);
 
-  }
+  // }
 
   async presentModal(checkLeadder: Player) {
     console.log(checkLeadder);

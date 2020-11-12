@@ -93,6 +93,10 @@ const routes: Routes = [
   },  {
     path: 'search-team',
     loadChildren: () => import('./search-team/search-team.module').then( m => m.SearchTeamPageModule)
+  },
+  {
+    path: 'join-team',
+    loadChildren: () => import('./join-team/join-team.module').then( m => m.JoinTeamPageModule)
   }
 
 ];

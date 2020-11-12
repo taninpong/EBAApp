@@ -9,4 +9,6 @@ export class Player {
     tuornament: boolean;
     leadder: boolean;
     rating: number;
+    playerImg: string;
+    requestTeam: string;
 }

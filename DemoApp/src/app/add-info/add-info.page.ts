@@ -11,7 +11,7 @@ export class AddInfoPage implements OnInit {
 
   public player: Player;
   constructor(private service: PlayerService) { 
-    this.player = this.service.Player_A
+    this.player = this.service.player
   }
 
   ngOnInit() {

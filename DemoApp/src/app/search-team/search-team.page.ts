@@ -24,7 +24,7 @@ export class SearchTeamPage implements OnInit {
     if (this.search != this.teamID) {
       this.found = false;
     } else {
-      this.rout.navigate(['/mtuornament']);
+      this.rout.navigate(['/join-team']);
     }
   }
 }

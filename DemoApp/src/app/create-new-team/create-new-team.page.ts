@@ -13,7 +13,7 @@ export class CreateNewTeamPage implements OnInit {
   public player: Player;
   public team:Team;
   constructor(private service: PlayerService) {
-    this.player = this.service.Player_A;
+    this.player = this.service.player;
   }
 
   ngOnInit() {
@@ -22,14 +22,15 @@ export class CreateNewTeamPage implements OnInit {
   confirm() {
     this.player.leadder = true;
     this.player.tuornament = true;
-    this.service.Player_A = this.player;
-    console.log(this.service.Player_A);
+    this.service.player = this.player;
+    console.log(this.service.player);
     this.team = {
-      leadder: this.service.Player_A,
+      leadder: this.service.player,
       rating: 999,
       teamName:this.player.teamName,
       teamLogo:this.player.teamLogo,
-      player:[]
+      player:[],
+      request:[]
     }
     this.service.team = this.team;
 

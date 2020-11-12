@@ -1,18 +1,15 @@
 <ion-header>
-  <ion-row>
-    <ion-toolbar color="primary">
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="/dashboard"></ion-back-button>
-      </ion-buttons>
-      <ion-title>MTuornament</ion-title>
-      <!-- <ion-toggle slot="end" (click)="switchPlayer()"></ion-toggle> -->
-    </ion-toolbar>
-  </ion-row>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home-eba"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Join Team by Search</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <img src="../../assets/banner-responsive.png">
-  <div *ngIf="player.tuornament == true">
+  <div>
     <div style="text-align: center;">
       <img src="{{ service.team.teamLogo }}" width="100px">
     </div>
@@ -38,10 +35,8 @@
       </ion-card-content>
     </ion-card>
   </div>
-
-
-  <div *ngIf="player.tuornament == false">
-    <ion-button expand="full" routerLink="{{ page }}">Create team</ion-button>
-    <ion-button expand="full" routerLink="/search-team">Jion team</ion-button>
-  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-button (click)="sendRequest()" expand="block">Request to join</ion-button>
+</ion-footer>

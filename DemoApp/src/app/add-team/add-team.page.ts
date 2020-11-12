@@ -12,7 +12,7 @@ export class AddTeamPage implements OnInit {
   public player_A: Player;
   public page: string;
   constructor(private service: PlayerService) {
-    this.player_A = this.service.Player_A;
+    this.player_A = this.service.player;
     console.log(this.player_A);
     if (this.player_A.inGameNamr == "" || this.player_A.role == "" || this.player_A.email == "" || this.player_A.tel == "") {
       this.page = "/add-info";
@@ -30,8 +30,8 @@ export class AddTeamPage implements OnInit {
   }
 
   OK() {
-    this.service.Player_A = this.player_A;
-    console.log(this.service.Player_A);
+    this.service.player = this.player_A;
+    console.log(this.service.player);
     
   }
 }

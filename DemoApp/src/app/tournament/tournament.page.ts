@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-tournament',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TournamentPage implements OnInit {
 
-  constructor() { }
+  constructor(private service: PlayerService) { }
 
   ngOnInit() {
   }
 
+  switchPlayer() {
+    this.service.switchPlayer();
+
+  }
 }

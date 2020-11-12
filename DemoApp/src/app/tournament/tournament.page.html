@@ -1,11 +1,10 @@
 <ion-header>
-  <ion-toolbar>
     <ion-toolbar color="primary">
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/home-eba"></ion-back-button>
       </ion-buttons>
       <ion-title>tournament</ion-title>
-    </ion-toolbar>
+      <ion-toggle slot="end" (click)="switchPlayer()"></ion-toggle>
   </ion-toolbar>
 </ion-header>
 

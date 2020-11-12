@@ -10,7 +10,9 @@ export class PlayerService {
 
   public Player_A: Player = new Player;
   public Player_B: Player = new Player;
+  public player: Player;
   public team: Team = new Team;
+  public sw: boolean = false;
   teamInfo: teamInfo[] = [
     { name: 'Team001', image: 'https://dynamic.brandcrowd.com/asset/logo/9173af46-4ce3-460a-930b-c6486f46cc9f/logo?v=4', rating: 10 },
     { name: 'Team002', image: 'https://image.freepik.com/free-vector/e-sports-team-logo-with-dragon_113398-3.jpg', rating: 20 },
@@ -39,24 +41,28 @@ export class PlayerService {
       email: "demo@ggmail.com",
       inGameNamr: "",
       role: "",
-      teamLogo: "https://png.pngtree.com/element_our/png_detail/20181102/avatar-profile-logo-vector-emblem-illustration-modern-illustration-png_227486.jpg",
+      playerImg: "https://png.pngtree.com/element_our/png_detail/20181102/avatar-profile-logo-vector-emblem-illustration-modern-illustration-png_227486.jpg",
+      teamLogo: "",
       teamName: "",
       tel: "08123456789",
       tuornament: false,
       leadder: false,
-      rating: 1
+      rating: 1,
+      requestTeam: null
     }
     this.Player_B = {
       name: "Pao Polo",
       email: "",
       inGameNamr: "",
       role: "",
+      playerImg: "",
       teamLogo: "",
       teamName: "",
       tel: "",
       tuornament: false,
       leadder: false,
-      rating: 1
+      rating: 1,
+      requestTeam: null
     }
     this.team = {
       leadder: null,
@@ -64,8 +70,21 @@ export class PlayerService {
       rating: 1,
       teamLogo: "",
       teamName: "",
-      request:[]
+      request: []
     }
+
+    this.player = this.Player_A;
+  }
+
+  switchPlayer(){
+    this.sw = !this.sw;
+    console.log(this.sw);
+    if (this.sw) {
+      this.player = this.Player_B;
+    } else {
+      this.player = this.Player_A;
+    }
+    console.log(this.player);
   }
 }
 
