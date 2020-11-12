@@ -97,6 +97,10 @@ const routes: Routes = [
   {
     path: 'join-team',
     loadChildren: () => import('./join-team/join-team.module').then( m => m.JoinTeamPageModule)
+  },
+  {
+    path: 'dlg-player-detail',
+    loadChildren: () => import('./dlg-player-detail/dlg-player-detail.module').then( m => m.DlgPlayerDetailPageModule)
   }
 
 ];

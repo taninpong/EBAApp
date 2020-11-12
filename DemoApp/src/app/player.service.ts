@@ -55,7 +55,7 @@ export class PlayerService {
       email: "",
       inGameNamr: "",
       role: "",
-      playerImg: "",
+      playerImg: "https://png.pngtree.com/element_our/png_detail/20181102/avatar-profile-logo-vector-emblem-illustration-modern-illustration-png_227486.jpg",
       teamLogo: "",
       teamName: "",
       tel: "",

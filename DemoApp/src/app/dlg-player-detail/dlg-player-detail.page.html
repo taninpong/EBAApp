@@ -1,0 +1,50 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="ion-text-center ">
+    <img src="{{playerData.playerImg}}" width="100px" height="100px">
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        <h2>Eba User</h2>
+        <p>{{playerData.name}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>In Game Name</h2>
+        <p>{{playerData.inGameNamr}}</p>
+        <p *ngIf="playerData.inGameNamr == ''|| playerData.inGameNamr== null ">-</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Rating</h2>
+        <p>{{playerData.rating}}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h2>Contact</h2>
+        <p>{{playerData.email}}</p>
+        <p *ngIf="playerData.email == ''|| playerData.email== null ">-</p>
+        <p>{{playerData.tel}}</p>
+        <p *ngIf="playerData.tel == ''|| playerData.tel== null ">-</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-toolbar>
+  <ion-button expand="full " (click)="dismissModal()">Close</ion-button>
+</ion-toolbar>
