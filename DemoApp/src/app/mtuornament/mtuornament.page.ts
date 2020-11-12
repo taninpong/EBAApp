@@ -64,8 +64,8 @@ export class MTuornamentPage implements OnInit {
   accept() {
     this.service.team.player.push(this.service.team.request[0]);
     this.service.team.request = [];
-    this.player.requestTeam = null;
-    this.player.tuornament = true;
+    this.service.Player_B.requestTeam = null;
+    this.service.Player_B.tuornament = true;
     console.log(this.service.team);
 
   }

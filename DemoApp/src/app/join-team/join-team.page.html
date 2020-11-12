@@ -45,6 +45,6 @@
     <ion-button (click)="sendRequest()" expand="full">Request to join</ion-button>
   </div>
   <div *ngIf="player.requestTeam != null">
-    <ion-button expand="full">Cancle Request</ion-button>
+    <ion-button expand="full" (click)="cancleRequest()">Cancle Request</ion-button>
   </div>
 </ion-footer>

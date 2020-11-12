@@ -26,4 +26,10 @@ export class JoinTeamPage implements OnInit {
     
   }
 
+  cancleRequest(){
+    this.player.requestTeam = null;
+    this.service.team.request = [];
+    console.log(this.service.team);
+  }
+
 }
