@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { AlertController, ModalController } from '@ionic/angular';
 import { Player } from 'src/models/Player';
 import { Team } from 'src/models/Team';
 import { DlgPlayerInfoPage } from '../dlg-player-info/dlg-player-info.page';
@@ -23,7 +23,6 @@ export class MTuornamentPage implements OnInit {
   ngOnInit() {
     this.page = this.checkStatus();
     console.log(this.page);
-
   }
 
   // switchPlayer() {
@@ -58,4 +57,5 @@ export class MTuornamentPage implements OnInit {
       return "/create-new-team";
     }
   }
+  
 }

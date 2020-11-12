@@ -10,7 +10,7 @@
 </ion-header>
 <ion-content fullscreen>
   <div class="ion-text-center ">
-    <img src="{{playerData.teamLogo}}" width="100px" height="100px">
+    <img src="{{playerData.playerImg}}" width="100px" height="100px">
     <img src="https://image.freepik.com/free-vector/princess-crown-icon-illustration_118124-2722.jpg" width="20px"
       height="20px" *ngIf="playerData.leadder == true">
 
@@ -47,7 +47,7 @@
   </ion-list>
 </ion-content>
 <ion-toolbar>
-  <ion-button expand="full ">PasBand</ion-button>
+  <ion-button expand="full " (click)="PasBand()">PasBand</ion-button>
   <ion-button expand="full " (click)="dismissModal2()">View
     Main Profile
   </ion-button>
