@@ -24,6 +24,8 @@ export class TeamServiceService {
       tuornament: true,
       rating: 9871,
       leadder: true,
+      playerImg:"",
+      requestTeam:""
     };
 
     this.Players = [
@@ -38,6 +40,8 @@ export class TeamServiceService {
         tuornament: true,
         rating: 5689,
         leadder: true,
+        playerImg:"",
+        requestTeam:""
       },
       {
         name: "MB48r6zq2U",
@@ -50,6 +54,8 @@ export class TeamServiceService {
         tel: "",
         tuornament: true,
         leadder: false,
+        playerImg:"",
+        requestTeam:""
       },
       {
         name: "JiWzzwKUZH",
@@ -62,6 +68,8 @@ export class TeamServiceService {
         tel: "",
         tuornament: true,
         leadder: false,
+        playerImg:"",
+        requestTeam:""
       },
       {
         name: "y6pF62vdfL",
@@ -74,6 +82,8 @@ export class TeamServiceService {
         tel: "",
         tuornament: true,
         leadder: false,
+        playerImg:"",
+        requestTeam:""
       },
       {
         name: "YIvXCR4jVM",
@@ -86,6 +96,8 @@ export class TeamServiceService {
         tel: "",
         tuornament: true,
         leadder: false,
+        playerImg:"",
+        requestTeam:""
       },
     ];
 
@@ -95,6 +107,7 @@ export class TeamServiceService {
       rating: 9999,
       leadder: this.Players.find(it => it.leadder === true),
       player: this.Players,
+      request:[],
     };
     this.mockTeam = [
       {
@@ -103,6 +116,7 @@ export class TeamServiceService {
         rating: 8652,
         leadder: this.mockPlayer,
         player: [],
+        request:[],
       },
       {
         teamName: "EsanRTA",
@@ -110,6 +124,7 @@ export class TeamServiceService {
         rating: 9521,
         leadder: this.mockPlayer,
         player: [],
+        request:[],
       },
       {
         teamName: "SEMonkey",
@@ -117,6 +132,7 @@ export class TeamServiceService {
         rating: 9514,
         leadder: this.mockPlayer,
         player: [],
+        request:[],
       },
     ];
 
