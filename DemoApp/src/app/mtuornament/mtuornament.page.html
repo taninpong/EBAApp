@@ -5,7 +5,7 @@
         <ion-back-button defaultHref="/dashboard"></ion-back-button>
       </ion-buttons>
       <ion-title>MTuornament</ion-title>
-      <!-- <ion-toggle slot="end" (click)="switchPlayer()"></ion-toggle> -->
+      <!-- <ion-toggle *ngIf="service.team.request != []" slot="end" ></ion-toggle> -->
     </ion-toolbar>
   </ion-row>
 </ion-header>
@@ -23,9 +23,9 @@
       <ion-label>rating {{ service.team.rating }}</ion-label>
     </ion-item>
     <h4>Player</h4>
-    <ion-card (click)="presentModal(player)">
+    <ion-card>
       <ion-card-content style="padding: unset;">
-        <ion-item lines="none">
+        <ion-item lines="none" (click)="presentModal(player)">
           <ion-avatar slot="start">
             <img src="{{ service.team.leadder.playerImg }}">
           </ion-avatar>
@@ -37,6 +37,20 @@
         </ion-item>
       </ion-card-content>
     </ion-card>
+    <ion-card-content>
+      <ion-list *ngFor="let item of service.team.player">
+        <ion-item lines="none" (click)="presentModal(item)">
+          <ion-avatar slot="start">
+            <img src="{{ item.playerImg }}">
+          </ion-avatar>
+          <ion-label>
+            <p>EBA name: {{ item.name }}</p>
+            <p>In Game Name: {{ item.inGameNamr }}</p>
+            <p>Rating: {{ item.leadder.rating }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
   </div>
 
 
@@ -45,3 +59,7 @@
     <ion-button expand="full" routerLink="/search-team">Jion team</ion-button>
   </div>
 </ion-content>
+
+<ion-footer *ngIf="service.team.request.length != 0">
+  <ion-button expand="full" (click)="accept()">Create team</ion-button>
+</ion-footer>

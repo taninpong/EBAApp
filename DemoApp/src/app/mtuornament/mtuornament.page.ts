@@ -23,6 +23,7 @@ export class MTuornamentPage implements OnInit {
   ngOnInit() {
     this.page = this.checkStatus();
     console.log(this.page);
+    console.log(this.service.team.request.length);
   }
 
   // switchPlayer() {
@@ -57,5 +58,13 @@ export class MTuornamentPage implements OnInit {
       return "/create-new-team";
     }
   }
-  
+
+  accept() {
+    this.service.team.player.push(this.service.team.request[0]);
+    this.service.team.request = [];
+    this.player.requestTeam = null;
+    this.player.tuornament = true;
+    console.log(this.service.team);
+
+  }
 }
